@@ -134,6 +134,41 @@
           }
         }
       }
+    },
+    "cookie-service": {
+      "root": "projects/cookie-service",
+      "sourceRoot": "projects/cookie-service/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/cookie-service/tsconfig.lib.json",
+            "project": "projects/cookie-service/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/cookie-service/src/test.ts",
+            "tsConfig": "projects/cookie-service/tsconfig.spec.json",
+            "karmaConfig": "projects/cookie-service/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/cookie-service/tsconfig.lib.json",
+              "projects/cookie-service/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "cookie-consent"

@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "cookie-service": [
+        "dist/cookie-service"
+      ],
+      "cookie-service/*": [
+        "dist/cookie-service/*"
+      ]
+    }
   }
 }
