@@ -1,6 +1,6 @@
 .alert-cookie {
     color: #fff;
-    background-color: #000;
+    background-color: #006;
 }
 
 .bottom {
@@ -11,5 +11,26 @@
 }
 
 .alert {
-    margin-bottom: 0 !important
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 0 !important;
+    border: 2px solid transparent;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-warning {
+    color: #212529;
+    background-color: #ffc107;
+    border-color: #ffc107;
 }

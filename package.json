@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^4.1.2",
     "bootstrap": "^4.3.1"
   },
   "devDependencies": {

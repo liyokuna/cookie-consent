@@ -1,19 +1,18 @@
 import { NgModule, InjectionToken, ModuleWithProviders } from '@angular/core';
-import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CookieServiceService } from './service/cookie-service.service';
 import { CookieServiceComponent } from './cookie-service.component';
 import { CommonModule } from '@angular/common';
 
 export interface CookieServiceConfig {
-  header: string;
-  message: string;
-  deny: string;
-  allow: string;
-  accept: string;
+  header: string,
+  message: string,
+  deny: string,
+  allow: string,
+  accept: string,
   button: {
-    accept: boolean;
-    allow: boolean;
-    decline: boolean;
+    accept: boolean,
+    allow: boolean,
+    decline: boolean,
   };
 }
 
@@ -23,10 +22,11 @@ export const CookieServiceConfigService = new InjectionToken<CookieServiceConfig
 
 @NgModule({
   declarations: [CookieServiceComponent],
-  imports: [NgbModule, CommonModule
+  imports: [ CommonModule
   ],
   exports: [CookieServiceComponent]
 })
+
 export class CookieServiceModule {
   static forRoot(config: CookieServiceConfig): ModuleWithProviders {
     return {
