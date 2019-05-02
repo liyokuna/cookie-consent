@@ -3,7 +3,7 @@ import { CookieServiceService } from './service/cookie-service.service';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'lib-cookie-service',
+  selector: 'cookie-service',
   templateUrl: './cookie-service.component.html',
   styleUrls: ['./cookie-service.component.scss'],
   providers: [ CookieServiceService ]

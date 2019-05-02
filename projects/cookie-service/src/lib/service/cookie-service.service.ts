@@ -1,5 +1,6 @@
 import { Injectable, Inject } from '@angular/core';
-import { CookieServiceConfig, CookieServiceConfigService } from '../cookie-service.module';
+import { CookieConfigService } from '../service/cookie-config.service';
+import { CookieConfig } from '../interface/cookie-config.interface';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -7,10 +8,10 @@ import { Observable, of } from 'rxjs';
 })
 export class CookieServiceService {
 
-  constructor(@Inject(CookieServiceConfigService) private config: CookieServiceConfig) { }
+  constructor(@Inject(CookieConfigService) private config: CookieConfig) { }
   private GA_COOKIE_NAMES = ['_ga', '_gat'];
 
-  public getConfig(): Observable<CookieServiceConfig> {
+  public getConfig(): Observable<CookieConfig> {
     return of(this.config);
   }
 

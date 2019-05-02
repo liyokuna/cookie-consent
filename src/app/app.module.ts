@@ -5,9 +5,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CookieServiceModule, CookieServiceConfig } from 'cookie-service';
+import { CookieServiceModule, CookieConfig } from 'cookie-service';
 
-const testLibConfig: CookieServiceConfig = {
+const testLibConfig: CookieConfig = {
   header: "warning cookie",
   message: "We use cookies",
   deny: "refuse cookie",
