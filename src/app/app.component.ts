@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CookieServiceService } from 'cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cookie-consent';
+  constructor(private cookiemanager: CookieServiceService) {}
+  public rejectCookie() {
+    this.cookiemanager.rejectCookie('UA-12345678-1');
+    location.reload();
+  }
 }

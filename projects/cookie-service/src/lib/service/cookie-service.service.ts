@@ -8,7 +8,9 @@ import { Observable, of } from 'rxjs';
 })
 export class CookieServiceService {
 
-  constructor(@Inject(CookieConfigService) private config: CookieConfig) { }
+  constructor(@Inject(CookieConfigService) private config: CookieConfig) {
+    console.log(config);
+   }
   private GA_COOKIE_NAMES = ['_ga', '_gat'];
 
   public getConfig(): Observable<CookieConfig> {
@@ -71,8 +73,8 @@ export class CookieServiceService {
 
   public rejectCookie(gaId: String) {
       // disable GA
-      this.setCookie(`ga-disable-${gaId}`, true);
-      this.setCookie(`consent`, false);
+      this.deleteCookie(`ga-disable-${gaId}`);
+      this.deleteCookie(`consent`);
       window[`ga-disable-${gaId}`] = true;
       this.GA_COOKIE_NAMES.forEach((cookieName) => {
         this.deleteCookie(cookieName);

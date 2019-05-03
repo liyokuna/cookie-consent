@@ -1,14 +1,14 @@
-<div class="alert-cookie fixed-bottom alert-{{this.type}}" *ngIf="this.showAlertCookie" attr.aria-label="{{ header | async }}">
+<div class="alert alert-cookie fixed-bottom alert-{{this.type}}" *ngIf="this.showAlertCookie" attr.aria-label="{{ header$ | async }}">
     <div class="row">
         <div class="col-sm-10">
             <p>
-                <b>{{ message | async }}</b>
+                <b>{{ message$ | async }}</b>
             </p>
         </div>
         <div class="col-sm-2">
-            <button *ngIf="this.DeclineButton" type="button" class="btn btn-link" (click)="this.deny()">{{ denybt | async }}</button>
-            <button *ngIf="this.AllowButton" type="button" class="btn btn-warning" (click)="this.allow()">{{ allowbt | async }}</button>
-            <button *ngIf="this.AcceptButton" type="button" class="btn btn-success" (click)="this.allow()">{{ acceptbt | async }}</button>
+            <button *ngIf="this.DeclineButton$ | async " type="button" class="btn btn-link" (click)="this.deny()">{{ denybt$ | async }}</button>
+            <button *ngIf="this.AllowButton$ | async " type="button" class="btn btn-warning" (click)="this.allow()">{{ allowbt$ | async }}</button>
+            <button *ngIf="this.AcceptButton$ | async " type="button" class="btn btn-success" (click)="this.allow()">{{ acceptbt$ | async }}</button>
         </div>
     </div>
 </div>

@@ -13,15 +13,15 @@ export class CookieServiceComponent implements OnInit {
   @Input() GA_ID: string;
   @Input() type: String;
 
-  AllowButton: Observable<Boolean>;
-  DeclineButton: Observable<Boolean>;
-  AcceptButton: Observable<Boolean>;
+  AllowButton$: Observable<Boolean>;
+  DeclineButton$: Observable<Boolean>;
+  AcceptButton$: Observable<Boolean>;
 
-  header: Observable<String>;
-  message: Observable<String>;
-  denybt: Observable<String>;
-  allowbt: Observable<String>;
-  acceptbt: Observable<String>;
+  header$: Observable<String>;
+  message$: Observable<String>;
+  denybt$: Observable<String>;
+  allowbt$: Observable<String>;
+  acceptbt$: Observable<String>;
 
   showAlertCookie: boolean;
 
@@ -30,6 +30,18 @@ export class CookieServiceComponent implements OnInit {
   constructor(private cookiemanager: CookieServiceService) {  }
 
   ngOnInit() {
+    this.header$ = this.cookiemanager.getHeader();
+    console.log(this.header$);
+    this.message$ = this.cookiemanager.getMessage();
+    this.denybt$ = this.cookiemanager.getDeny();
+    this.allowbt$ = this.cookiemanager.getAllow();
+    this.acceptbt$ = this.cookiemanager.getAccept();
+
+    this.AcceptButton$ = this.cookiemanager.getAcceptButton();
+    this.AllowButton$ = this.cookiemanager.getAllowButton();
+    this.DeclineButton$ = this.cookiemanager.getDeclinetButton();
+
+    console.log(this.cookiemanager.getCookie('consent'));
     if(!this.types.includes(this.type)) {
       this.type='dark';
     }
@@ -42,19 +54,10 @@ export class CookieServiceComponent implements OnInit {
 
     if (!this.cookiemanager.getCookie('consent')) {
       this.showAlertCookie = true;
+      console.log(this.showAlertCookie);
     }
 
     if (this.cookiemanager.getCookie('consent') && this.showAlertCookie) {
-        this.header = this.cookiemanager.getHeader();
-        this.message = this.cookiemanager.getMessage();
-        this.denybt = this.cookiemanager.getDeny();
-        this.allowbt = this.cookiemanager.getAllow();
-        this.acceptbt = this.cookiemanager.getAccept();
-
-        this.AcceptButton = this.cookiemanager.getAcceptButton();
-        this.AllowButton = this.cookiemanager.getAllowButton();
-        this.DeclineButton = this.cookiemanager.getDeclinetButton();
-
         const TrackNavigator = navigator.doNotTrack;
         if ( (TrackNavigator === '1' || TrackNavigator === 'yes' ) ) {
           this.cookiemanager.rejectCookie(this.GA_ID);
