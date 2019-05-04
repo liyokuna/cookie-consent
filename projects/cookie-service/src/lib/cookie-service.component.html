@@ -1,4 +1,4 @@
-<div class="bottom" *ngIf="this.showAlertCookie" attr.aria-label="{{ this.header$ | async }}">
+<div class="alert-cookie bottom" *ngIf="this.showAlertCookie" attr.aria-label="{{ this.header$ | async }}">
     <div class="row">
         <div class="col-sm-10">
             <p>
@@ -7,9 +7,9 @@
             </p>
         </div>
         <div class="col-sm-2">
-            <button *ngIf="this.DenyEnable$ | async " type="button" class="btn btn-link" (click)="this.deny()" attr.aria-label="{{ this.DenyMessage$ | async }}">{{ this.DenyMessage$ | async }}</button>
-            <button *ngIf="this.AllowEnable$ | async " type="button" class="btn btn-warning" (click)="this.allow()" attr.aria-label="{{ this.AllowMessage$ | async }}">{{ this.AllowMessage$ | async }}</button>
-            <button *ngIf="this.AcceptEnable$ | async " type="button" class="btn btn-success" (click)="this.allow()" attr.aria-label="{{ this.AcceptMessage$ | async }}">{{ this.AcceptMessage$ | async }}</button>
+            <button *ngIf="this.DenyEnable$ | async " type="button" class="cbtn cbtn-link" (click)="this.deny()" attr.aria-label="{{ this.DenyMessage$ | async }}">{{ this.DenyMessage$ | async }}</button>
+            <button *ngIf="this.AllowEnable$ | async " type="button" class="cbtn cbtn-warning" (click)="this.allow()" attr.aria-label="{{ this.AllowMessage$ | async }}">{{ this.AllowMessage$ | async }}</button>
+            <button *ngIf="this.AcceptEnable$ | async " type="button" class="cbtn cbtn-success" (click)="this.allow()" attr.aria-label="{{ this.AcceptMessage$ | async }}">{{ this.AcceptMessage$ | async }}</button>
         </div>
     </div>
 </div>

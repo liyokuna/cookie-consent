@@ -1,3 +1,11 @@
+.alert-cookie {
+    color: #fff;
+    position: fixed;
+    background-color: #000;
+    width: 100%;
+    padding: .75rem 1.25rem;
+}
+
 .bottom {
     bottom: 0;
     left: 0;
@@ -5,19 +13,27 @@
     right: 0;
 }
 
-.btn-link {
+.cbtn {
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+}
+
+.cbtn-link {
     font-weight: 400;
     color: #007bff;
     text-decoration: none;
 }
 
-.btn-success {
+.cbtn-success {
     color: #fff;
     background-color: #28a745;
     border-color: #28a745;
 }
 
-.btn-warning {
+.cbtn-warning {
     color: #212529;
     background-color: #ffc107;
     border-color: #ffc107;
