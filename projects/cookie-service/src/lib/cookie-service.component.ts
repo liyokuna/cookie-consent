@@ -1,60 +1,48 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CookieServiceService } from './service/cookie-service.service';
+import { ConfigService } from './service/config.service';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cookie-service',
   templateUrl: './cookie-service.component.html',
   styleUrls: ['./cookie-service.component.scss'],
-  providers: [ CookieServiceService ]
+  providers: [ CookieServiceService, ConfigService ]
 })
 export class CookieServiceComponent implements OnInit {
 
   @Input() GA_ID: string;
-  @Input() type: String;
 
-  AllowButton$: Observable<Boolean>;
-  DeclineButton$: Observable<Boolean>;
-  AcceptButton$: Observable<Boolean>;
+  AllowButton$: Observable<{ enable: Boolean; backgroundColor: String; color: String; }>;
+  DeclineButton$: Observable<{ enable: Boolean; backgroundColor: String; color: String; }>;
+  AcceptButton$: Observable<{ enable: Boolean; backgroundColor: String; color: String; }>;
+  LinkButton$: Observable<{ enable: Boolean; link: String; }>;
 
   header$: Observable<String>;
   message$: Observable<String>;
-  denybt$: Observable<String>;
-  allowbt$: Observable<String>;
-  acceptbt$: Observable<String>;
 
   showAlertCookie: boolean;
 
-  private types: String[] = ['success' , 'info' , 'warning' , 'danger' , 'primary' , 'secondary', 'light', 'dark'];
-
-  constructor(private cookiemanager: CookieServiceService) {  }
+  constructor(private cookiemanager: CookieServiceService, private cookieconfig: ConfigService) {  }
 
   ngOnInit() {
-    this.header$ = this.cookiemanager.getHeader();
-    console.log(this.header$);
-    this.message$ = this.cookiemanager.getMessage();
-    this.denybt$ = this.cookiemanager.getDeny();
-    this.allowbt$ = this.cookiemanager.getAllow();
-    this.acceptbt$ = this.cookiemanager.getAccept();
+    this.header$ = this.cookieconfig.getHeader();
+    
+    this.message$ = this.cookieconfig.getMessage();
 
-    this.AcceptButton$ = this.cookiemanager.getAcceptButton();
-    this.AllowButton$ = this.cookiemanager.getAllowButton();
-    this.DeclineButton$ = this.cookiemanager.getDeclinetButton();
-
-    console.log(this.cookiemanager.getCookie('consent'));
-    if(!this.types.includes(this.type)) {
-      this.type='dark';
-    }
+    this.AcceptButton$ = this.cookieconfig.getAcceptButton();
+    this.AllowButton$ = this.cookieconfig.getAllowButton();
+    this.DeclineButton$ = this.cookieconfig.getDeclinetButton();
+    this.LinkButton$ = this.cookieconfig.getLinkButton();
 
     if(!this.cookiemanager.isAnalytics(this.GA_ID)) {
       this.GA_ID='0000';
-      console.log('GA id UA Erro');
+      console.log('Your Google Analytics ID seems to have a problem');
       return;
     }
 
     if (!this.cookiemanager.getCookie('consent')) {
       this.showAlertCookie = true;
-      console.log(this.showAlertCookie);
     }
 
     if (this.cookiemanager.getCookie('consent') && this.showAlertCookie) {

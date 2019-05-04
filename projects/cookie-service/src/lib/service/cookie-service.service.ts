@@ -1,55 +1,22 @@
-import { Injectable, Inject } from '@angular/core';
-import { CookieConfigService } from '../service/cookie-config.service';
-import { CookieConfig } from '../interface/cookie-config.interface';
-import { Observable, of } from 'rxjs';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CookieServiceService {
 
-  constructor(@Inject(CookieConfigService) private config: CookieConfig) {
-    console.log(config);
-   }
+  constructor() { }
   private GA_COOKIE_NAMES = ['_ga', '_gat'];
 
-  public getConfig(): Observable<CookieConfig> {
-    return of(this.config);
-  }
-
-  public getHeader(): Observable<String> {
-    return of(this.config.header);
-  }
-
-  public getMessage(): Observable<String> {
-    return of(this.config.message);
-  }
-
-  public getDeny(): Observable<String> {
-    return of(this.config.deny);
-  }
-
-  public getAllow(): Observable<String> {
-    return of(this.config.allow);
-  }
-
-  public getAccept(): Observable<String> {
-    return of(this.config.accept);
-  }
-
-  public getAcceptButton(): Observable<Boolean> {
-    return of(this.config.button.accept);
-  }
-
-  public getDeclinetButton(): Observable<Boolean> {
-    return of(this.config.button.decline);
-  }
-
-  public getAllowButton(): Observable<Boolean> {
-    return of(this.config.button.allow);
-  }
-
   public setCookie(name: String, val: Boolean) {
+      const date = new Date();
+      const value = val;
+      // Set it expire in 395 days, compliance with Cookie Laws in EU
+      date.setTime(date.getTime() + (395 * 24 * 60 * 60 * 1000));
+      document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/';
+    }
+
+  public setCookieWithString(name: String, val: String) {
       const date = new Date();
       const value = val;
       // Set it expire in 395 days, compliance with Cookie Laws in EU
@@ -82,6 +49,6 @@ export class CookieServiceService {
     }
 
   public isAnalytics(str: String) {
-        return (/^ua-\d{4,9}-\d{1,4}$/i).test(str.toString());
+    return (/^ua-\d{4,9}-\d{1,4}$/i).test(str.toString());
     }
 }

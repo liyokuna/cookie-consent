@@ -1,6 +1,13 @@
 .alert-cookie {
     color: #fff;
+    display: none;
+    position: fixed;
+    top: 0;
     background-color: #000;
+    width: 100%;
+    &.active {
+        display: block;
+    }
 }
 
 .bottom {
@@ -8,13 +15,6 @@
     left: 0;
     position: fixed;
     right: 0;
-}
-
-.alert {
-    position: relative;
-    padding: .75rem 1.25rem;
-    margin-bottom: 0 !important;
-    border: 2px solid transparent;
 }
 
 .btn-link {
