@@ -1,15 +1,15 @@
-<div class="alert-cookie bottom" *ngIf="this.showAlertCookie" attr.aria-label="{{ this.header$ | async }}">
+<div class="bottom" *ngIf="this.showAlertCookie" attr.aria-label="{{ this.header$ | async }}">
     <div class="row">
         <div class="col-sm-10">
             <p>
                 <b>{{ this.message$ | async }}</b>
-                <a *ngIf="this.LinkButton$.enable | async " href="https://www.w3schools.com" attr.aria-label="{{ this.LinkButton$.learnMore | async }}">{{ this.LinkButton$.learnMore | async }}</a>
+                <a *ngIf="this.LearnMoreEnable$ | async " href="{{ this.LearnMoreLink$ | async }}" attr.aria-label="{{ this.LearnMoreMessage$ | async }}">{{ this.LearnMoreMessage$ | async }}</a>
             </p>
         </div>
         <div class="col-sm-2">
-            <button *ngIf="this.DeclineButton$.enable | async " type="button" class="btn btn-link" (click)="this.deny()" attr.aria-label="{{ this.DeclineButton$.deny | async }}">{{ this.DeclineButton$.deny | async }}</button>
-            <button *ngIf="this.AllowButton$.allow | async " type="button" class="btn btn-warning" (click)="this.allow()" attr.aria-label="{{ this.AllowButton$.allow | async }}">{{ this.AllowButton$.allow | async }}</button>
-            <button *ngIf="this.AcceptButton$.accept | async " type="button" class="btn btn-success" (click)="this.allow()" attr.aria-label="{{ this.AcceptButton$.accept | async }}">{{ this.AcceptButton$.accept | async }}</button>
+            <button *ngIf="this.DenyEnable$ | async " type="button" class="btn btn-link" (click)="this.deny()" attr.aria-label="{{ this.DenyMessage$ | async }}">{{ this.DenyMessage$ | async }}</button>
+            <button *ngIf="this.AllowEnable$ | async " type="button" class="btn btn-warning" (click)="this.allow()" attr.aria-label="{{ this.AllowMessage$ | async }}">{{ this.AllowMessage$ | async }}</button>
+            <button *ngIf="this.AcceptEnable$ | async " type="button" class="btn btn-success" (click)="this.allow()" attr.aria-label="{{ this.AcceptMessage$ | async }}">{{ this.AcceptMessage$ | async }}</button>
         </div>
     </div>
 </div>

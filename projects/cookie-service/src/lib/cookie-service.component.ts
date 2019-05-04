@@ -13,27 +13,55 @@ export class CookieServiceComponent implements OnInit {
 
   @Input() GA_ID: string;
 
-  AllowButton$: Observable<{ enable: Boolean; backgroundColor: String; color: String; }>;
-  DeclineButton$: Observable<{ enable: Boolean; backgroundColor: String; color: String; }>;
-  AcceptButton$: Observable<{ enable: Boolean; backgroundColor: String; color: String; }>;
-  LinkButton$: Observable<{ enable: Boolean; link: String; }>;
-
   header$: Observable<String>;
   message$: Observable<String>;
 
+  AcceptMessage$: Observable<String>;
+  AcceptEnable$: Observable<Boolean>;
+  AcceptBgcolor$: Observable<String>;
+  AcceptColor$: Observable<String>;
+
+  DenyMessage$: Observable<String>;
+  DenyEnable$: Observable<Boolean>;
+  DenyBgcolor$: Observable<String>;
+  DenyColor$: Observable<String>;
+
+  AllowMessage$: Observable<String>;
+  AllowEnable$: Observable<Boolean>;
+  AllowBgcolor$: Observable<String>;
+  AllowColor$: Observable<String>;
+
+  LearnMoreMessage$: Observable<String>;
+  LearnMoreEnable$: Observable<Boolean>;
+  LearnMoreLink$: Observable<String>;
+
   showAlertCookie: boolean;
 
-  constructor(private cookiemanager: CookieServiceService, private cookieconfig: ConfigService) {  }
+  constructor(private cookiemanager: CookieServiceService, private cookieconfig: ConfigService) { }
 
   ngOnInit() {
     this.header$ = this.cookieconfig.getHeader();
     
     this.message$ = this.cookieconfig.getMessage();
 
-    this.AcceptButton$ = this.cookieconfig.getAcceptButton();
-    this.AllowButton$ = this.cookieconfig.getAllowButton();
-    this.DeclineButton$ = this.cookieconfig.getDeclinetButton();
-    this.LinkButton$ = this.cookieconfig.getLinkButton();
+    this.AcceptMessage$ = this.cookieconfig.getAcceptMessage();
+    this.AcceptEnable$ = this.cookieconfig.getAcceptEnable();
+    this.AcceptBgcolor$ = this.cookieconfig.getAcceptBgcolor();
+    this.AcceptColor$ = this.cookieconfig.getAcceptColor();
+
+    this.LearnMoreMessage$ = this.cookieconfig.getLinkMessage();
+    this.LearnMoreEnable$ = this.cookieconfig.getLinkEnable();
+    this.LearnMoreLink$ = this.cookieconfig.getLinkLink();
+
+    this.DenyMessage$ = this.cookieconfig.getDenyMessage();
+    this.DenyEnable$ = this.cookieconfig.getDenyEnable();
+    this.DenyBgcolor$ = this.cookieconfig.getDenyBgcolor();
+    this.DenyColor$ = this.cookieconfig.getDenyColor();
+
+    this.AllowMessage$ = this.cookieconfig.getAllowMessage();
+    this.AllowEnable$ = this.cookieconfig.getAllowEnable();
+    this.AllowBgcolor$ = this.cookieconfig.getAllowBgcolor();
+    this.AllowColor$ = this.cookieconfig.getAllowColor();
 
     if(!this.cookiemanager.isAnalytics(this.GA_ID)) {
       this.GA_ID='0000';
