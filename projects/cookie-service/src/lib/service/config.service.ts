@@ -19,9 +19,6 @@ export class ConfigService {
         return of(this.config.message);
     }
     
-    public getAcceptButton(): Observable<{ enable: Boolean; accept: String; backgroundColor: String; color: String; }> {
-        return of(this.config.acceptButton);
-    }
 
     public getAcceptEnable(): Observable<Boolean> {
         return of(this.config.acceptButton.enable);
@@ -29,18 +26,6 @@ export class ConfigService {
 
     public getAcceptMessage(): Observable<String> {
         return of(this.config.acceptButton.accept);
-    }
-
-    public getAcceptBgcolor(): Observable<String> {
-        return of(this.config.acceptButton.backgroundColor);
-    }
-
-    public getAcceptColor(): Observable<String> {
-        return of(this.config.acceptButton.color);
-    }
-    
-    public getDenyButton(): Observable<{ enable: Boolean; deny: String; backgroundColor: String; color: String; }> {
-        return of(this.config.declineButton);
     }
     
     public getDenyEnable(): Observable<Boolean> {
@@ -51,32 +36,12 @@ export class ConfigService {
         return of(this.config.declineButton.deny);
     }
 
-    public getDenyBgcolor(): Observable<String> {
-        return of(this.config.declineButton.backgroundColor);
-    }
-
-    public getDenyColor(): Observable<String> {
-        return of(this.config.declineButton.color);
-    }
-
-    public getAllowButton(): Observable<{ enable: Boolean; allow: String; backgroundColor: String; color: String; }> {
-        return of(this.config.allowtButton);
-    }
-
     public getAllowEnable(): Observable<Boolean> {
         return of(this.config.allowtButton.enable);
     }
 
     public getAllowMessage(): Observable<String> {
         return of(this.config.allowtButton.allow);
-    }
-
-    public getAllowBgcolor(): Observable<String> {
-        return of(this.config.allowtButton.backgroundColor);
-    }
-
-    public getAllowColor(): Observable<String> {
-        return of(this.config.allowtButton.color);
     }
 
     public getLinkButton(): Observable<{ enable: Boolean; learnMore: String; link: String; }> {
