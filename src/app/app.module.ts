@@ -8,8 +8,8 @@ import { AppComponent } from './app.component';
 import { CookieServiceModule, CookieConfig } from 'cookie-service';
 
 const testLibConfig: CookieConfig = {
-  header: "Cookie Consent Banner",
-  message: "This website uses cookie to provide your the best experience. ",
+  header: 'Cookie Consent Banner',
+  message: 'This website uses cookie to provide your the best experience. ',
   acceptButton: {
     enable: false,
     accept: 'Got it!'
