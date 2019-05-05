@@ -2,14 +2,14 @@
 Cookie Service focus on accessibilty and on respecting the [GDPR](https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es).
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
-##Demo
+## Demo
 Here is a link to the [demo]()
 
-##Dependencies
+## Dependencies
 
 [Angular](https://angular.io/) ( the latest version of Angualr 7+ )
 
-##Installation
+## Installation
 
 Intall cookie-service dependency through npm.
 `npm install cookie-service`
@@ -20,7 +20,7 @@ After installing, you need to import the main module:
 The full configuration:
 
 `
-import { CookieServiceModule, CookieConfig } from 'cookie-service';
+import { CookieServiceModule, CookieConfig } from 'cookie-service';<br>
 
 const testLibConfig: CookieConfig = {
   header: "Cookie Consent Banner",
@@ -61,7 +61,7 @@ const testLibConfig: CookieConfig = {
 export class AppModule { }
 `
 
-##Usage
+## Usage
 
 Once the above mentionned step are done, you can use `import { CookieServiceService } from 'cookie-service';` in your component to access to the main function.
 
