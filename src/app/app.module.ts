@@ -11,8 +11,8 @@ const testLibConfig: CookieConfig = {
   header: "warning cookie",
   message: "We use cookies",
   alert: {
-    backgroundColor: '#000',
-     color: '#fff'
+    backgroundColor: '',
+     color: ''
   },
   acceptButton: {
     enable: false,

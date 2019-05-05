@@ -18,18 +18,12 @@ export class CookieServiceComponent implements OnInit {
 
   AcceptMessage$: Observable<String>;
   AcceptEnable$: Observable<Boolean>;
-  AcceptBgcolor$: Observable<String>;
-  AcceptColor$: Observable<String>;
 
   DenyMessage$: Observable<String>;
   DenyEnable$: Observable<Boolean>;
-  DenyBgcolor$: Observable<String>;
-  DenyColor$: Observable<String>;
 
   AllowMessage$: Observable<String>;
   AllowEnable$: Observable<Boolean>;
-  AllowBgcolor$: Observable<String>;
-  AllowColor$: Observable<String>;
 
   LearnMoreMessage$: Observable<String>;
   LearnMoreEnable$: Observable<Boolean>;
@@ -40,32 +34,12 @@ export class CookieServiceComponent implements OnInit {
   constructor(private cookiemanager: CookieServiceService, private cookieconfig: ConfigService) { }
 
   ngOnInit() {
-    this.header$ = this.cookieconfig.getHeader();
-    
-    this.message$ = this.cookieconfig.getMessage();
 
-    this.AcceptMessage$ = this.cookieconfig.getAcceptMessage();
-    this.AcceptEnable$ = this.cookieconfig.getAcceptEnable();
-    this.AcceptBgcolor$ = this.cookieconfig.getAcceptBgcolor();
-    this.AcceptColor$ = this.cookieconfig.getAcceptColor();
-
-    this.LearnMoreMessage$ = this.cookieconfig.getLinkMessage();
-    this.LearnMoreEnable$ = this.cookieconfig.getLinkEnable();
-    this.LearnMoreLink$ = this.cookieconfig.getLinkLink();
-
-    this.DenyMessage$ = this.cookieconfig.getDenyMessage();
-    this.DenyEnable$ = this.cookieconfig.getDenyEnable();
-    this.DenyBgcolor$ = this.cookieconfig.getDenyBgcolor();
-    this.DenyColor$ = this.cookieconfig.getDenyColor();
-
-    this.AllowMessage$ = this.cookieconfig.getAllowMessage();
-    this.AllowEnable$ = this.cookieconfig.getAllowEnable();
-    this.AllowBgcolor$ = this.cookieconfig.getAllowBgcolor();
-    this.AllowColor$ = this.cookieconfig.getAllowColor();
+    this.getValues();
 
     if(!this.cookiemanager.isAnalytics(this.GA_ID)) {
       this.GA_ID='0000';
-      console.log('Your Google Analytics ID seems to have a problem');
+      console.warn('Your Google Analytics ID seems to have a problem');
       return;
     }
 
@@ -91,6 +65,25 @@ export class CookieServiceComponent implements OnInit {
           return;
       }
     }
+  }
+
+  private getValues() {
+    this.header$ = this.cookieconfig.getHeader();
+    
+    this.message$ = this.cookieconfig.getMessage();
+
+    this.AcceptMessage$ = this.cookieconfig.getAcceptMessage();
+    this.AcceptEnable$ = this.cookieconfig.getAcceptEnable();
+
+    this.LearnMoreMessage$ = this.cookieconfig.getLinkMessage();
+    this.LearnMoreEnable$ = this.cookieconfig.getLinkEnable();
+    this.LearnMoreLink$ = this.cookieconfig.getLinkLink();
+
+    this.DenyMessage$ = this.cookieconfig.getDenyMessage();
+    this.DenyEnable$ = this.cookieconfig.getDenyEnable();
+
+    this.AllowMessage$ = this.cookieconfig.getAllowMessage();
+    this.AllowEnable$ = this.cookieconfig.getAllowEnable();
   }
 
   public deny() {

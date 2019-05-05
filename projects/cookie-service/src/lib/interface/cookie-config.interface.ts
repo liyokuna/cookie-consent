@@ -1,27 +1,17 @@
 export interface CookieConfig {
     header: String,
     message: String,
-    alert: {
-      backgroundColor: String,
-      color: String
-    },
     acceptButton: {
       enable: Boolean,
-      accept: String,
-      backgroundColor: String,
-      color: String
+      accept: String
     },
     allowtButton: {
       enable: Boolean,
-      allow: String,
-      backgroundColor: String,
-      color: String
+      allow: String
     },
     declineButton: {
       enable: Boolean,
-      deny: String,
-      backgroundColor: String,
-      color: String
+      deny: String
     },
     learnMoreLink: {
       enable: Boolean,
