@@ -18,7 +18,6 @@ export class ConfigService {
     public getMessage(): Observable<String> {
         return of(this.config.message);
     }
-    
 
     public getAcceptEnable(): Observable<Boolean> {
         return of(this.config.acceptButton.enable);

@@ -8,34 +8,24 @@ import { AppComponent } from './app.component';
 import { CookieServiceModule, CookieConfig } from 'cookie-service';
 
 const testLibConfig: CookieConfig = {
-  header: "warning cookie",
-  message: "We use cookies",
-  alert: {
-    backgroundColor: '',
-     color: ''
-  },
+  header: "Cookie Consent Banner",
+  message: "This website uses cookie to provide your the best experience. ",
   acceptButton: {
     enable: false,
-    accept: 'accept cookie',
-    backgroundColor: '#000',
-    color: '#fff'
+    accept: 'Got it!'
   },
   allowtButton: {
     enable: true,
-    allow: 'allow cookie',
-    backgroundColor: '#000',
-    color: '#fff'
+    allow: 'Allow Cookie'
   },
   declineButton: {
     enable: true,
-    deny: 'refuse cookie',
-    backgroundColor: '#000',
-    color: '#fff'
+    deny: 'Refuse Cookie'
   },
   learnMoreLink: {
     enable: true,
     learnMore: 'learn more',
-    link: '#fff'
+    link: 'www.example.com'
   }
 }
 

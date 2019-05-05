@@ -2,6 +2,9 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
 
+The purpose of this library is to offer a full accessible cookie consent banner.
+Each component of the banner displayed, are meant to be accessible on respecting the standard of accessibility.
+
 ## Code scaffolding
 
 Run `ng generate component component-name --project cookie-service` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project cookie-service`.

@@ -14,7 +14,7 @@ export class CookieServiceService {
       // Set it expire in 395 days, compliance with Cookie Laws in EU
       date.setTime(date.getTime() + (395 * 24 * 60 * 60 * 1000));
       document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/';
-    }
+  }
 
   public setCookieWithString(name: String, val: String) {
       const date = new Date();
@@ -22,7 +22,7 @@ export class CookieServiceService {
       // Set it expire in 395 days, compliance with Cookie Laws in EU
       date.setTime(date.getTime() + (395 * 24 * 60 * 60 * 1000));
       document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/';
-    }
+  }
 
   public getCookie(name: String) {
       const value = '; ' + document.cookie;
@@ -30,13 +30,13 @@ export class CookieServiceService {
       if (parts.length === 2) {
           return parts.pop().split(';').shift();
       }
-    }
+  }
 
   public deleteCookie(name: String) {
       const date = new Date();
       date.setTime(date.getTime() + (-1 * 24 * 60 * 60 * 1000));
       document.cookie = name + '=; expires=' + date.toUTCString() + '; path=/';
-    }
+  }
 
   public rejectCookie(gaId: String) {
       // disable GA
@@ -46,9 +46,9 @@ export class CookieServiceService {
       this.GA_COOKIE_NAMES.forEach((cookieName) => {
         this.deleteCookie(cookieName);
       });
-    }
+  }
 
   public isAnalytics(str: String) {
     return (/^ua-\d{4,9}-\d{1,4}$/i).test(str.toString());
-    }
+  }
 }

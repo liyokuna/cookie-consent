@@ -7,7 +7,7 @@ import { CookieServiceService } from 'cookie-service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cookie-consent';
+  title = 'Cookie Consent Banner';
   constructor(private cookiemanager: CookieServiceService) {}
   public rejectCookie() {
     this.cookiemanager.rejectCookie('UA-12345678-1');
