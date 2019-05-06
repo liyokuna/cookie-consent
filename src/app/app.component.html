@@ -1,89 +1,98 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div class=container style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    {{ title }}
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 <div class=container>
   <div class="row">
-<h2>Installation</h2>
-  <p>
-    Intall cookie-service dependency through npm.
-    <code>npm install cookie-service</code>
-  </p>
-  <p>After installing, you need to import the main module:
-    <code>import { CookieServiceModule } from 'cookie-service';</code>
-  </p>
+    <h2>Installation</h2>
+    <div class="row">
+      <p>
+        Intall cookie-service dependency through npm.
+        <code>npm install cookie-service</code>
+      </p>
+      <p>After installing, you need to import the main module:
+        <code>import {{ '{' }} CookieServiceModule {{ '}' }} from 'cookie-service';</code>
+      </p>
+    </div>
+    <div class="row">
+      <p>The full configuration:</p>
+        <code>
+      import {{ '{' }} CookieServiceModule, CookieConfig {{ '}' }} from 'cookie-service';<br>
 
-  <p>The full configuration:
-    <code>
-  import { CookieServiceModule, CookieConfig } from 'cookie-service';
+      const testLibConfig: CookieConfig = {{ '{' }}<br>
+        header: "Cookie Consent Banner",<br>
+        message: "We use cookies to provide you the best experience",<br>
+        acceptButton: {{ '{' }}<br>
+          enable: false,<br>
+          accept: 'Got it!'<br>
+        {{ '}' }},<br>
+        allowtButton: {{ '{' }}<br>
+          enable: true,<br>
+          allow: 'Allow cookie'<br>
+        {{ '}' }},<br>
+        declineButton: {{ '{' }}<br>
+          enable: true,<br>
+          deny: 'Refuse cookie'<br>
+        {{ '}' }},<br>
+        learnMoreLink: {{ '{' }}<br>
+          enable: true,<br>
+          learnMore: 'learn more',<br>
+          link: 'www.example.com'<br>
+        {{ '}' }}<br>
+      }<br>
 
-  const testLibConfig: CookieConfig = {
-    header: "Cookie Consent Banner",
-    message: "We use cookies to provide you the best experience",
-    acceptButton: {
-      enable: false,
-      accept: 'Got it!'
-    },
-    allowtButton: {
-      enable: true,
-      allow: 'Allow cookie'
-    },
-    declineButton: {
-      enable: true,
-      deny: 'Refuse cookie'
-    },
-    learnMoreLink: {
-      enable: true,
-      learnMore: 'learn more',
-      link: 'www.example.com'
-    }
-  }
-
-  @NgModule({
-    declarations: [
-      AppComponent
-    ],
-    imports: [
-      BrowserModule,
-      NgbModule,
-      CookieServiceModule,
-      CookieServiceModule.forRoot(testLibConfig),
-      AppRoutingModule
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
-  })
-  export class AppModule { }
-    </code>
-  </p>
+      @NgModule({{ '{' }}<br>
+        declarations: [<br>
+          AppComponent<br>
+        ],<br>
+        imports: [<br>
+          BrowserModule,<br>
+          NgbModule,<br>
+          CookieServiceModule,<br>
+          CookieServiceModule.forRoot(testLibConfig),
+          AppRoutingModule
+        ],
+        providers: [],
+        bootstrap: [AppComponent]
+      {{ '}' }})
+      export class AppModule {{ '{' }} {{ '}' }}
+        </code>
+      </div>
+    </div>
+    <div class="row">
+    <h2>Usage</h2>
+    <div class="row">
+      <p>
+        Once the above mentionned step are done, you can use `import {{ '{' }} CookieServiceService {{ '}' }} from 'cookie-service';` in your component to access to the main function.
+      </p>
+    </div>
+    <div class="row">
+        <code>
+          import {{ '{' }} CookieServiceService {{ '}' }} from 'cookie-service';<br>
+          ...<br>
+          export class AppComponent {{ '{' }}<br>
+            title = 'cookie-service';<br>
+            constructor(private cookiemanager: CookieServiceService) {{ '{' }}}<br>
+            public rejectCookie() {{ '{' }}<br>
+              this.cookiemanager.rejectCookie('UA-12345678-1');<br>
+              location.reload();<br>
+          {{ '}' }}<br>
+        </code>
+      </div>
+      <br>
+      <div class="row">
+        <p><code>rejectCookie(input:String)</code> function is meant to delete all the cookies and relauch the web site to display the cookie consent banner.
+      
+        And in your template, just add: 
+          <code><cookie-service [GA_ID] = 'UA-12345678-1'></cookie-service></code>
+        <b>Notice</b> that you need to provide your GA ID in order to help the library to disbable Google analtycs if the user refuse the use of cookie.
+      </p>
+      </div>
+    <button type="button" class="btn btn-warning" (click)="this.rejectCookie()">Reject the cookie</button>
+  </div>
 </div>
-<h2>Usage</h2>
-<p>
-  Once the above mentionned step are done, you can use `import { CookieServiceService } from 'cookie-service';` in your component to access to the main function.
-
-  <code>
-    import { CookieServiceService } from 'cookie-service';
-    ...
-    export class AppComponent {
-      title = 'cookie-service';
-      constructor(private cookiemanager: CookieServiceService) {}
-      public rejectCookie() {
-        this.cookiemanager.rejectCookie('UA-12345678-1');
-        location.reload();
-    }
-  </code>
-
-  <code>reject</code> function is meant to delete all the cookies and relauch the web site to display the cookie consent banner.
-
-  And in your template, just add: 
-  <code><cookie-service [GA_ID] = "'UA-12345678-1'"></cookie-service></code>
-  <b>Notice</b> that you need to provide your GA ID in order to help the library to disbable Google analtycs if the user refuse the use of cookie.
-</p>
-<button type="button" class="btn btn-warning" (click)="this.rejectCookie()">Reject the cookie</button>
-</div>
-
+<br>
 <router-outlet></router-outlet>
-<cookie-service [GA_ID] = "'UA-12345678-1'"></cookie-service>
+<cookie-service [GA_ID] = 'UA-12345678-1'></cookie-service>

@@ -48,21 +48,21 @@ describe('AppComponent', () => {
   it(`should have as title 'cookie-consent'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('cookie-consent');
+    expect(app.title).toEqual('Cookie Consent Banner');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should render title in a h2 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Cookie Consent Banner');
+    expect(compiled.querySelector('h2').textContent).toContain('Installation');
   });
 
-  it('should render cookie service', () => {
+  it('should render reject cookie button', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('b').textContent).toContain('"This website uses cookie to provide your the best experience. ');
+    expect(compiled.querySelector('button').textContent).toContain('Reject the cookie');
   });
 
 });

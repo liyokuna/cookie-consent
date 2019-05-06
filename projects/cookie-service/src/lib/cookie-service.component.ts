@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 })
 export class CookieServiceComponent implements OnInit {
 
-  @Input() GA_ID: string;
+  @Input() GA_ID: String;
 
   header$: Observable<String>;
   message$: Observable<String>;
@@ -39,7 +39,7 @@ export class CookieServiceComponent implements OnInit {
 
     if(!this.cookiemanager.isAnalytics(this.GA_ID)) {
       this.GA_ID='0000';
-      console.warn('Your Google Analytics ID seems to have a problem');
+      console.info('Your Google Analytics ID seems to have a problem');
       return;
     }
 

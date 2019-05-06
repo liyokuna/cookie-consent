@@ -1,15 +1,15 @@
-<div class="alert-cookie bottom" *ngIf="this.showAlertCookie" attr.aria-label="{{ this.header$ | async }}">
+<div class="alert-cookie bottom" *ngIf="showAlertCookie" attr.aria-label="{{ header$ | async }}">
     <div class="crow">
         <div class="col-sm-10">
             <p>
-                <b>{{ this.message$ | async }}</b>
-                <a *ngIf="this.LearnMoreEnable$ | async " href="{{ this.LearnMoreLink$ | async }}" attr.aria-label="{{ this.LearnMoreMessage$ | async }}">{{ this.LearnMoreMessage$ | async }}</a>
+                <b>{{ message$ | async }}</b>
+                <a *ngIf="LearnMoreEnable$ | async " href="{{ LearnMoreLink$ | async }}" attr.aria-label="{{ LearnMoreMessage$ | async }}">{{ LearnMoreMessage$ | async }}</a>
             </p>
         </div>
         <div class="col-sm-2">
-            <button *ngIf="this.DenyEnable$ | async " type="button" class="cbtn cbtn-link" (click)="this.deny()" attr.aria-label="{{ this.DenyMessage$ | async }}">{{ this.DenyMessage$ | async }}</button>
-            <button *ngIf="this.AllowEnable$ | async " type="button" class="cbtn cbtn-warning" (click)="this.allow()" attr.aria-label="{{ this.AllowMessage$ | async }}">{{ this.AllowMessage$ | async }}</button>
-            <button *ngIf="this.AcceptEnable$ | async " type="button" class="cbtn cbtn-success" (click)="this.allow()" attr.aria-label="{{ this.AcceptMessage$ | async }}">{{ this.AcceptMessage$ | async }}</button>
+            <button *ngIf="DenyEnable$ | async " type="button" class="cbtn cbtn-link" (click)="deny()" attr.aria-label="{{ DenyMessage$ | async }}">{{ DenyMessage$ | async }}</button>
+            <button *ngIf="AllowEnable$ | async " type="button" class="cbtn cbtn-warning" (click)="allow()" attr.aria-label="{{ AllowMessage$ | async }}">{{ AllowMessage$ | async }}</button>
+            <button *ngIf="AcceptEnable$ | async " type="button" class="cbtn cbtn-success" (click)="allow()" attr.aria-label="{{ AcceptMessage$ | async }}">{{ AcceptMessage$ | async }}</button>
         </div>
     </div>
 </div>
