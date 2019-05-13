@@ -1,7 +1,5 @@
 .alert-cookie {
-    color: #fff;
     position: fixed;
-    background-color: #000;
     width: 100%;
     padding: .75rem 1.25rem;
 }
@@ -19,26 +17,4 @@
     font-size: 1rem;
     line-height: 1.5;
     border-radius: .25rem;
-}
-
-.cbtn-link {
-    font-weight: 400;
-    color: #3D9BFF;
-    background-color: transparent;
-}
-
-.cbtn-success {
-    color: #fff;
-    background-color: #266433;
-    border-color: #266433;
-}
-
-.cbtn-warning {
-    color: #000;
-    background-color: #f36e15f5;
-    border-color: #f36e15f5;
-}
-
-.crow {
-    display: flex;
 }

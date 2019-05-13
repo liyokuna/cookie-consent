@@ -1,5 +1,5 @@
-<div class="alert-cookie bottom" *ngIf="showAlertCookie" attr.aria-label="{{ header$ | async }}">
-    <div class="crow">
+<div class="alert-cookie bottom" *ngIf="showAlertCookie" attr.aria-label="{{ header$ | async }}" [ngStyle]="cssClass(HeaderColor, HeaderBackgroundColor )">
+    <div class="row">
         <div class="col-sm-10">
             <p>
                 <b>{{ message$ | async }}</b>
@@ -7,9 +7,9 @@
             </p>
         </div>
         <div class="col-sm-2">
-            <button *ngIf="DenyEnable$ | async " type="button" class="cbtn cbtn-link" (click)="deny()" attr.aria-label="{{ DenyMessage$ | async }}">{{ DenyMessage$ | async }}</button>
-            <button *ngIf="AllowEnable$ | async " type="button" class="cbtn cbtn-warning" (click)="allow()" attr.aria-label="{{ AllowMessage$ | async }}">{{ AllowMessage$ | async }}</button>
-            <button *ngIf="AcceptEnable$ | async " type="button" class="cbtn cbtn-success" (click)="allow()" attr.aria-label="{{ AcceptMessage$ | async }}">{{ AcceptMessage$ | async }}</button>
+            <button *ngIf="DenyEnable$ | async " type="button" class="cbtn" (click)="this.deny()" attr.aria-label="{{ DenyMessage$ | async }}" [ngStyle]="cssClass(AcceptColor, 'transparent' )">{{ DenyMessage$ | async }}</button>
+            <button *ngIf="AllowEnable$ | async " type="button" class="cbtn" (click)="this.allow()" attr.aria-label="{{ AllowMessage$ | async }}" [ngStyle]="cssClass(AllowColor, AllowBackgroundColor)">{{ AllowMessage$ | async }}</button>
+            <button *ngIf="AcceptEnable$ | async " type="button" class="cbtn" (click)="this.allow()" attr.aria-label="{{ AcceptMessage$ | async }}" [ngStyle]="cssClass(AcceptColor, AcceptBackgroundColor)">{{ AcceptMessage$ | async }}</button>
         </div>
     </div>
 </div>

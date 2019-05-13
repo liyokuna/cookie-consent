@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CookieServiceService } from './service/cookie-service.service';
 import { ConfigService } from './service/config.service';
 import { Observable } from 'rxjs';
@@ -11,23 +11,34 @@ import { Observable } from 'rxjs';
 })
 export class CookieServiceComponent implements OnInit {
 
-  @Input() GA_ID: String;
+  GA_ID: String;
 
   header$: Observable<String>;
   message$: Observable<String>;
+  HeaderColor: String;
+  HeaderBackgroundColor: String;
+
+  domain: String;
 
   AcceptMessage$: Observable<String>;
   AcceptEnable$: Observable<Boolean>;
+  AcceptColor: String;
+  AcceptBackgroundColor: String;
 
   DenyMessage$: Observable<String>;
   DenyEnable$: Observable<Boolean>;
+  DenyColor: String;
+  DenyBackgroundColor: String;
 
   AllowMessage$: Observable<String>;
   AllowEnable$: Observable<Boolean>;
+  AllowColor: String;
+  AllowBackgroundColor: String;
 
   LearnMoreMessage$: Observable<String>;
   LearnMoreEnable$: Observable<Boolean>;
   LearnMoreLink$: Observable<String>;
+  LearnMoreColor: String;
 
   showAlertCookie: boolean;
 
@@ -36,6 +47,7 @@ export class CookieServiceComponent implements OnInit {
   ngOnInit() {
 
     this.getValues();
+    this.getColors();
 
     if(!this.cookiemanager.isAnalytics(this.GA_ID)) {
       this.GA_ID='0000';
@@ -84,23 +96,45 @@ export class CookieServiceComponent implements OnInit {
 
     this.AllowMessage$ = this.cookieconfig.getAllowMessage();
     this.AllowEnable$ = this.cookieconfig.getAllowEnable();
+
+    this.cookieconfig.getDomain().subscribe(val => this.domain = val);
+    this.cookieconfig.getGA_id().subscribe(val => this.GA_ID = val)
+  }
+
+  private getColors() {
+    this.cookieconfig.getHeaderColor().subscribe(val => this.HeaderColor = val);
+    this.cookieconfig.getHeaderBackgroundColor().subscribe(val => this.HeaderBackgroundColor = val);
+
+    this.cookieconfig.getAcceptColor().subscribe(val => this.AcceptColor = val);
+    this.cookieconfig.getAcceptBackgroundColor().subscribe(val => this.AcceptBackgroundColor = val);
+
+    this.cookieconfig.getDenyColor().subscribe(val => this.DenyColor = val);
+    this.cookieconfig.getDenyBackgroundColor().subscribe(val => this.DenyBackgroundColor = val);
+
+    this.cookieconfig.getAllowColor().subscribe(val => this.AllowColor = val);
+    this.cookieconfig.getAllowBackgroundColor().subscribe(val => this.AllowBackgroundColor = val);
+
+    this.cookieconfig.getLinkColor().subscribe(val => this.LearnMoreColor = val);
+  }
+
+  public cssClass(color: String, bcolor: String) {
+    return {
+      'color': color,
+      'background-color': bcolor,
+      'border-color': bcolor,
+    }
   }
 
   public deny() {
     this.cookiemanager.rejectCookie(this.GA_ID);
+    this.cookiemanager.setCookie('consent', true, this.domain);
     this.showAlertCookie = false;
     return;
   }
 
   public allow() {
-    this.cookiemanager.setCookie('consent', true);
+    this.cookiemanager.setCookie('consent', true, this.domain);
     this.showAlertCookie = false;
-    return;
-  }
-
-  public reset( ID: String) {
-    this.cookiemanager.rejectCookie(ID);
-    this.cookiemanager.rejectCookie('consent');
     return;
   }
 

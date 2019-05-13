@@ -12,11 +12,27 @@ export class ConfigService {
     }
 
     public getHeader(): Observable<String> {
-        return of(this.config.header);
+        return of(this.config.header.title);
+    }
+
+    public getHeaderColor(): Observable<String> {
+        return of(this.config.header.color);
+    }
+
+    public getHeaderBackgroundColor(): Observable<String> {
+        return of(this.config.header.bcolor);
+    }
+
+    public getDomain(): Observable<String> {
+        return of(this.config.header.domain);
+    }
+
+    public getGA_id(): Observable<String> {
+        return of(this.config.header.ga_id);
     }
     
     public getMessage(): Observable<String> {
-        return of(this.config.message);
+        return of(this.config.header.message);
     }
 
     public getAcceptEnable(): Observable<Boolean> {
@@ -25,6 +41,14 @@ export class ConfigService {
 
     public getAcceptMessage(): Observable<String> {
         return of(this.config.acceptButton.accept);
+    }
+
+    public getAcceptColor(): Observable<String> {
+        return of(this.config.acceptButton.color);
+    }
+
+    public getAcceptBackgroundColor(): Observable<String> {
+        return of(this.config.acceptButton.bcolor);
     }
     
     public getDenyEnable(): Observable<Boolean> {
@@ -35,12 +59,28 @@ export class ConfigService {
         return of(this.config.declineButton.deny);
     }
 
+    public getDenyColor(): Observable<String> {
+        return of(this.config.declineButton.color);
+    }
+
+    public getDenyBackgroundColor(): Observable<String> {
+        return of(this.config.declineButton.bcolor);
+    }
+
     public getAllowEnable(): Observable<Boolean> {
         return of(this.config.allowtButton.enable);
     }
 
     public getAllowMessage(): Observable<String> {
         return of(this.config.allowtButton.allow);
+    }
+
+    public getAllowColor(): Observable<String> {
+        return of(this.config.allowtButton.color);
+    }
+
+    public getAllowBackgroundColor(): Observable<String> {
+        return of(this.config.allowtButton.bcolor);
     }
 
     public getLinkButton(): Observable<{ enable: Boolean; learnMore: String; link: String; }> {
@@ -57,5 +97,9 @@ export class ConfigService {
 
     public getLinkEnable(): Observable<Boolean> {
         return of(this.config.learnMoreLink.enable);
+    }
+
+    public getLinkColor(): Observable<String> {
+        return of(this.config.learnMoreLink.color);
     }
 }
