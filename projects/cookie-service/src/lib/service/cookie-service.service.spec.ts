@@ -16,11 +16,11 @@ describe('CookieServiceService', () => {
   beforeEach(() => { service = new CookieServiceService(); });
 
   it('#setCookie should set a boolean value', ()=> {
-    service.setCookie('test', true);
+    service.setCookie('test', true,'localhost');
   });
 
   it('#setCookieWithString should set a string value', ()=> {
-    service.setCookieWithString('stringTest', 'test');
+    service.setCookieWithString('stringTest', 'test','localhost');
   });
 
   it('#getCookie should return a boolean value', ()=> {

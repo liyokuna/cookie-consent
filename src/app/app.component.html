@@ -86,7 +86,7 @@
         <p><code>rejectCookie(input:String)</code> function is meant to delete all the cookies and relauch the web site to display the cookie consent banner.
       
         And in your template, just add: 
-          <code><cookie-service [GA_ID] = 'UA-12345678-1'></cookie-service></code>
+          <code>cookie-service</code>
         <b>Notice</b> that you need to provide your GA ID in order to help the library to disbable Google analtycs if the user refuse the use of cookie.
       </p>
       </div>
@@ -95,4 +95,4 @@
 </div>
 <br>
 <router-outlet></router-outlet>
-<cookie-service [GA_ID] = 'UA-12345678-1'></cookie-service>
+<cookie-service></cookie-service>

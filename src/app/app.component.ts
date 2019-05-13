@@ -10,7 +10,7 @@ export class AppComponent {
   title = 'Cookie Consent Banner';
   constructor(private cookiemanager: CookieServiceService) {}
   public rejectCookie() {
-    this.cookiemanager.rejectCookie('UA-12345678-1');
+    this.cookiemanager.rejectCookie('UA-123456-1');
     location.reload();
   }
 }
