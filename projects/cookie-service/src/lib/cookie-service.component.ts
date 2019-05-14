@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieServiceService } from './service/cookie-service.service';
 import { ConfigService } from './service/config.service';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'cookie-service',
@@ -13,31 +12,31 @@ export class CookieServiceComponent implements OnInit {
 
   GA_ID: String;
 
-  header$: Observable<String>;
-  message$: Observable<String>;
+  header: String;
+  message: String;
   HeaderColor: String;
   HeaderBackgroundColor: String;
 
   domain: String;
 
-  AcceptMessage$: Observable<String>;
-  AcceptEnable$: Observable<Boolean>;
+  AcceptMessage: String;
+  AcceptEnable: Boolean;
   AcceptColor: String;
   AcceptBackgroundColor: String;
 
-  DenyMessage$: Observable<String>;
-  DenyEnable$: Observable<Boolean>;
+  DenyMessage: String;
+  DenyEnable: Boolean;
   DenyColor: String;
   DenyBackgroundColor: String;
 
-  AllowMessage$: Observable<String>;
-  AllowEnable$: Observable<Boolean>;
+  AllowMessage: String;
+  AllowEnable: Boolean;
   AllowColor: String;
   AllowBackgroundColor: String;
 
-  LearnMoreMessage$: Observable<String>;
-  LearnMoreEnable$: Observable<Boolean>;
-  LearnMoreLink$: Observable<String>;
+  LearnMoreMessage: String;
+  LearnMoreEnable: Boolean;
+  LearnMoreLink: String;
   LearnMoreColor: String;
 
   showAlertCookie: boolean;
@@ -80,22 +79,22 @@ export class CookieServiceComponent implements OnInit {
   }
 
   private getValues() {
-    this.header$ = this.cookieconfig.getHeader();
+    this.cookieconfig.getHeader().subscribe(val => this.header = val);
     
-    this.message$ = this.cookieconfig.getMessage();
+    this.cookieconfig.getMessage().subscribe(val => this.message = val);
 
-    this.AcceptMessage$ = this.cookieconfig.getAcceptMessage();
-    this.AcceptEnable$ = this.cookieconfig.getAcceptEnable();
+    this.cookieconfig.getAcceptMessage().subscribe(val => this.AcceptMessage = val);
+    this.cookieconfig.getAcceptEnable().subscribe(val => this.AcceptEnable = val);
 
-    this.LearnMoreMessage$ = this.cookieconfig.getLinkMessage();
-    this.LearnMoreEnable$ = this.cookieconfig.getLinkEnable();
-    this.LearnMoreLink$ = this.cookieconfig.getLinkLink();
+    this.cookieconfig.getLinkMessage().subscribe(val => this.LearnMoreMessage = val);
+    this.cookieconfig.getLinkEnable().subscribe(val => this.LearnMoreEnable = val);
+    this.cookieconfig.getLinkLink().subscribe(val => this.LearnMoreLink = val);
 
-    this.DenyMessage$ = this.cookieconfig.getDenyMessage();
-    this.DenyEnable$ = this.cookieconfig.getDenyEnable();
+    this.cookieconfig.getDenyMessage().subscribe(val => this.DenyMessage = val);
+    this.cookieconfig.getDenyEnable().subscribe(val => this.DenyEnable = val);
 
-    this.AllowMessage$ = this.cookieconfig.getAllowMessage();
-    this.AllowEnable$ = this.cookieconfig.getAllowEnable();
+    this.cookieconfig.getAllowMessage().subscribe(val => this.AllowMessage = val);
+    this.cookieconfig.getAllowEnable().subscribe(val => this.AllowEnable =val );
 
     this.cookieconfig.getDomain().subscribe(val => this.domain = val);
     this.cookieconfig.getGA_id().subscribe(val => this.GA_ID = val)
