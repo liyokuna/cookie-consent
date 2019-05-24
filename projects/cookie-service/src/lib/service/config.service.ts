@@ -102,4 +102,20 @@ export class ConfigService {
     public getLinkColor(): Observable<String> {
         return of(this.config.learnMoreLink.color);
     }
+
+    public getReviewEnable(): Observable<Boolean> {
+        return of(this.config.review.enable);
+    }
+
+    public getReviewMessage(): Observable<String> {
+        return of(this.config.review.message);
+    }
+
+    public getReviewColor(): Observable<String> {
+        return of(this.config.review.color);
+    }
+
+    public getReviewBackgroundColor(): Observable<String> {
+        return of(this.config.review.bcolor);
+    }
 }

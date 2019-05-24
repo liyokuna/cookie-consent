@@ -1,4 +1,4 @@
-import { NgModule, InjectionToken, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CookieServiceService } from './service/cookie-service.service';
 import { CookieConfig } from './interface/cookie-config.interface';
 import { CookieConfigService } from './service/cookie-config.service';

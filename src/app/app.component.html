@@ -1,7 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
+
 <div class=container style="text-align:center">
   <h1>
-    {{ title }}
+    {{ title }} {{ value }}
   </h1>
 </div>
 <div class=container>
@@ -95,4 +95,4 @@
 </div>
 <br>
 <router-outlet></router-outlet>
-<cookie-service></cookie-service>
+<cookie-service (isOpened)="onOpen($event)" ></cookie-service>

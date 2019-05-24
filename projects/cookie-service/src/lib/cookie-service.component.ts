@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CookieServiceService } from './service/cookie-service.service';
 import { ConfigService } from './service/config.service';
 
@@ -39,7 +39,14 @@ export class CookieServiceComponent implements OnInit {
   LearnMoreLink: String;
   LearnMoreColor: String;
 
+  ReviewEnable: Boolean;
+  Review: String;
+  ReviewColor: String;
+  ReviewBcolor: String;
+
   showAlertCookie: boolean;
+
+  @Output() isOpened: EventEmitter<Boolean> = new EventEmitter();
 
   constructor(private cookiemanager: CookieServiceService, private cookieconfig: ConfigService) { }
 
@@ -56,6 +63,7 @@ export class CookieServiceComponent implements OnInit {
 
     if (!this.cookiemanager.getCookie('consent')) {
       this.showAlertCookie = true;
+      this.isOpened.emit(this.showAlertCookie);
     }
 
     if (this.cookiemanager.getCookie('consent') && this.showAlertCookie) {
@@ -63,16 +71,19 @@ export class CookieServiceComponent implements OnInit {
         if ( (TrackNavigator === '1' || TrackNavigator === 'yes' ) ) {
           this.cookiemanager.rejectCookie(this.GA_ID);
           this.showAlertCookie = false;
+          this.isOpened.emit(false);
           return;
         }
         if ( this.cookiemanager.getCookie('consent') === 'false' && ( (TrackNavigator === '1' || TrackNavigator === 'yes' ) )) {
           this.cookiemanager.rejectCookie(this.GA_ID);
           this.showAlertCookie = false;
+          this.isOpened.emit(this.showAlertCookie);
           return;
         }
         if ( this.cookiemanager.getCookie('consent') === 'false' ) {
           this.cookiemanager.rejectCookie(this.GA_ID);
           this.showAlertCookie = false;
+          this.isOpened.emit(this.showAlertCookie);
           return;
       }
     }
@@ -97,7 +108,10 @@ export class CookieServiceComponent implements OnInit {
     this.cookieconfig.getAllowEnable().subscribe(val => this.AllowEnable =val );
 
     this.cookieconfig.getDomain().subscribe(val => this.domain = val);
-    this.cookieconfig.getGA_id().subscribe(val => this.GA_ID = val)
+    this.cookieconfig.getGA_id().subscribe(val => this.GA_ID = val);
+
+    this.cookieconfig.getReviewEnable().subscribe(val => this.ReviewEnable = val);
+    this.cookieconfig.getReviewMessage().subscribe(val => this.Review = val);
   }
 
   private getColors() {
@@ -114,6 +128,9 @@ export class CookieServiceComponent implements OnInit {
     this.cookieconfig.getAllowBackgroundColor().subscribe(val => this.AllowBackgroundColor = val);
 
     this.cookieconfig.getLinkColor().subscribe(val => this.LearnMoreColor = val);
+
+    this.cookieconfig.getReviewColor().subscribe(val => this.ReviewColor =val);
+    this.cookieconfig.getAcceptBackgroundColor().subscribe(val => this.ReviewBcolor = val);
   }
 
   public cssClass(color: String, bcolor: String) {
@@ -128,13 +145,20 @@ export class CookieServiceComponent implements OnInit {
     this.cookiemanager.rejectCookie(this.GA_ID);
     this.cookiemanager.setCookie('consent', true, this.domain);
     this.showAlertCookie = false;
+    this.isOpened.emit(this.showAlertCookie);
     return;
   }
 
   public allow() {
     this.cookiemanager.setCookie('consent', true, this.domain);
     this.showAlertCookie = false;
+    this.isOpened.emit(this.showAlertCookie);
     return;
+  }
+
+  public review() {
+    this.cookiemanager.rejectCookie(this.GA_ID);
+    location.reload();
   }
 
 }

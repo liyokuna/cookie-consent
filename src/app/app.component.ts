@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CookieServiceService } from 'cookie-service';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +7,10 @@ import { CookieServiceService } from 'cookie-service';
 })
 export class AppComponent {
   title = 'Cookie Consent Banner';
-  constructor(private cookiemanager: CookieServiceService) {}
-  public rejectCookie() {
-    this.cookiemanager.rejectCookie('UA-123456-1');
-    location.reload();
+  value: Boolean;
+  constructor() {}
+
+  onOpen($event) {
+    console.log($event);
   }
 }

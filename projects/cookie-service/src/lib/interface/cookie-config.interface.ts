@@ -5,7 +5,7 @@ export interface CookieConfig {
       domain: String,
       ga_id: String,
       color: string,
-      bcolor: String,
+      bcolor: String
     },    
     acceptButton: {
       enable: Boolean,
@@ -30,5 +30,11 @@ export interface CookieConfig {
       learnMore: String,
       link: String,
       color: String
+    },
+    review: {
+      enable: Boolean,
+      message: String,
+      color: string,
+      bcolor: string
     }
 }

@@ -35,4 +35,25 @@ describe('CookieServiceService', () => {
     expect(service.isAnalytics('UA-0000-23')).toBeTruthy();
   });
 
+  it('#isAnalytics should return a boolean value', ()=> {
+    expect(service.isAnalytics('UA-0000-23')).toBeTruthy();
+  });
+
+  it('#deleteCookie should delete cookie stringTest', ()=> {
+    service.deleteCookie('stringTest');
+  });
+
+  it('#deleteCookie should delete cookie test', ()=> {
+    service.deleteCookie('test');
+  });
+
+  it('#getCookie should return a undefined value', ()=> {
+    expect(service.getCookie('stringTest')).toBeUndefined;
+  });
+
+  it('#getCookie should return a undefined value', ()=> {
+    expect(service.getCookie('test')).toBeUndefined;
+  });
+  
+
 });
