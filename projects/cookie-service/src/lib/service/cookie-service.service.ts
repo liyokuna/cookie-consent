@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class CookieServiceService {
 
   constructor() { }
-  private GA_COOKIE_NAMES = ['_ga', '_gat'];
+  private GA_COOKIE_NAMES = ['__utma', '__utmb', '__utmc', '__utmz', '_ga', '_gat'];
 
   public setCookie(name: String, val: Boolean, domain: String) {
       const date = new Date();

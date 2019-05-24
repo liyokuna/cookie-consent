@@ -15,5 +15,5 @@
 </div>
 
 <div class="bottom" *ngIf="!showAlertCookie && ReviewEnable" attr.aria-label="{{ Review }}">
-    <span class="badge badge-pill badge-info" (click)="this.review()" [ngStyle]="cssClass(ReviewColor, ReviewBcolor )">{{Review}}</span>
+    <span class="badge badge-pill" (click)="this.review()" [ngStyle]="cssClass(ReviewColor, ReviewBcolor )">{{Review}}</span>
 </div>
