@@ -3,50 +3,50 @@ import { CookieServiceService } from './service/cookie-service.service';
 import { ConfigService } from './service/config.service';
 
 @Component({
-  selector: 'cookie-service',
+  selector: 'lib-cookie-service',
   templateUrl: './cookie-service.component.html',
   styleUrls: ['./cookie-service.component.scss'],
   providers: [ CookieServiceService, ConfigService ]
 })
 export class CookieServiceComponent implements OnInit {
 
-  GA_ID: String;
+  GA_ID: string;
 
-  header: String;
-  message: String;
-  HeaderColor: String;
-  HeaderBackgroundColor: String;
+  header: string;
+  message: string;
+  HeaderColor: string;
+  HeaderBackgroundColor: string;
 
-  domain: String;
+  domain: string;
 
-  AcceptMessage: String;
-  AcceptEnable: Boolean;
-  AcceptColor: String;
-  AcceptBackgroundColor: String;
+  AcceptMessage: string;
+  AcceptEnable: boolean;
+  AcceptColor: string;
+  AcceptBackgroundColor: string;
 
-  DenyMessage: String;
-  DenyEnable: Boolean;
-  DenyColor: String;
-  DenyBackgroundColor: String;
+  DenyMessage: string;
+  DenyEnable: boolean;
+  DenyColor: string;
+  DenyBackgroundColor: string;
 
-  AllowMessage: String;
-  AllowEnable: Boolean;
-  AllowColor: String;
-  AllowBackgroundColor: String;
+  AllowMessage: string;
+  AllowEnable: boolean;
+  AllowColor: string;
+  AllowBackgroundColor: string;
 
-  LearnMoreMessage: String;
-  LearnMoreEnable: Boolean;
-  LearnMoreLink: String;
-  LearnMoreColor: String;
+  LearnMoreMessage: string;
+  LearnMoreEnable: boolean;
+  LearnMoreLink: string;
+  LearnMoreColor: string;
 
-  ReviewEnable: Boolean;
-  Review: String;
-  ReviewColor: String;
-  ReviewBcolor: String;
+  ReviewEnable: boolean;
+  Review: string;
+  ReviewColor: string;
+  ReviewBcolor: string;
 
   showAlertCookie: boolean;
 
-  @Output() isOpened: EventEmitter<Boolean> = new EventEmitter();
+  @Output() isOpened: EventEmitter<boolean> = new EventEmitter();
 
   constructor(private cookiemanager: CookieServiceService, private cookieconfig: ConfigService) { }
 
@@ -55,9 +55,9 @@ export class CookieServiceComponent implements OnInit {
     this.getValues();
     this.getColors();
 
-    if(!this.cookiemanager.isAnalytics(this.GA_ID)) {
-      this.GA_ID='0000';
-      console.info('Your Google Analytics ID seems to have a problem');
+    if (!this.cookiemanager.isAnalytics(this.GA_ID)) {
+      this.GA_ID =  '0000';
+      console.log('Your Google Analytics ID seems to have a problem');
       return;
     }
 
@@ -91,7 +91,7 @@ export class CookieServiceComponent implements OnInit {
 
   private getValues() {
     this.cookieconfig.getHeader().subscribe(val => this.header = val);
-    
+
     this.cookieconfig.getMessage().subscribe(val => this.message = val);
 
     this.cookieconfig.getAcceptMessage().subscribe(val => this.AcceptMessage = val);
@@ -105,7 +105,7 @@ export class CookieServiceComponent implements OnInit {
     this.cookieconfig.getDenyEnable().subscribe(val => this.DenyEnable = val);
 
     this.cookieconfig.getAllowMessage().subscribe(val => this.AllowMessage = val);
-    this.cookieconfig.getAllowEnable().subscribe(val => this.AllowEnable =val );
+    this.cookieconfig.getAllowEnable().subscribe(val => this.AllowEnable = val);
 
     this.cookieconfig.getDomain().subscribe(val => this.domain = val);
     this.cookieconfig.getGA_id().subscribe(val => this.GA_ID = val);
@@ -129,16 +129,16 @@ export class CookieServiceComponent implements OnInit {
 
     this.cookieconfig.getLinkColor().subscribe(val => this.LearnMoreColor = val);
 
-    this.cookieconfig.getReviewColor().subscribe(val => this.ReviewColor =val);
+    this.cookieconfig.getReviewColor().subscribe(val => this.ReviewColor = val);
     this.cookieconfig.getReviewBackgroundColor().subscribe(val => this.ReviewBcolor = val);
   }
 
-  public cssClass(color: String, bcolor: String) {
+  public cssClass(color: string, bcolor: string) {
     return {
       'color': color,
       'background-color': bcolor,
       'border-color': bcolor,
-    }
+    };
   }
 
   public deny() {

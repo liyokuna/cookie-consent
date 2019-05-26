@@ -8,7 +8,7 @@ export class CookieServiceService {
   constructor() { }
   private GA_COOKIE_NAMES = ['__utma', '__utmb', '__utmc', '__utmz', '_ga', '_gat'];
 
-  public setCookie(name: String, val: Boolean, domain: String) {
+  public setCookie(name: string, val: boolean, domain: string) {
       const date = new Date();
       const value = val;
       // Set it expire in 395 days, compliance with Cookie Laws in EU
@@ -16,7 +16,7 @@ export class CookieServiceService {
       document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/' + '; domain=' + domain;
   }
 
-  public setCookieWithString(name: String, val: String, domain: String) {
+  public setCookieWithString(name: string, val: string, domain: string) {
       const date = new Date();
       const value = val;
       // Set it expire in 395 days, compliance with Cookie Laws in EU
@@ -24,7 +24,7 @@ export class CookieServiceService {
       document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/' + '; domain=' + domain;
   }
 
-  public getCookie(name: String) {
+  public getCookie(name: string) {
       const value = '; ' + document.cookie;
       const parts = value.split('; ' + name + '=');
       if (parts.length === 2) {
@@ -32,13 +32,13 @@ export class CookieServiceService {
       }
   }
 
-  public deleteCookie(name: String) {
+  public deleteCookie(name: string) {
       const date = new Date();
       date.setTime(date.getTime() + (-1 * 24 * 60 * 60 * 1000));
       document.cookie = name + '=; expires=' + date.toUTCString() + '; path=/';
   }
 
-  public rejectCookie(gaId: String) {
+  public rejectCookie(gaId: string) {
       // disable GA
       this.deleteCookie(`ga-disable-${gaId}`);
       this.deleteCookie('consent');
@@ -48,7 +48,7 @@ export class CookieServiceService {
       });
   }
 
-  public isAnalytics(str: String) {
+  public isAnalytics(str: string) {
     return (/^ua-\d{4,9}-\d{1,4}$/i).test(str.toString());
   }
 }

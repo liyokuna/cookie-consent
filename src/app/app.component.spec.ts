@@ -6,24 +6,43 @@ import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   let testLibConfig : CookieConfig = {
-    header: "warning cookie",
-    message: "We use cookies",
+    header: {
+      title:"Cookie Consent Banner",
+      message: "This website uses cookie to provide your the best experience. ",
+      domain:"localhost",
+      ga_id: "UA-123456-1",
+      color: '#fff',
+      bcolor: '#000'
+    },
     acceptButton: {
       enable: false,
-      accept: 'accept cookie'
+      accept: "Got it!",
+      color: '#fff',
+      bcolor: '#266433'
     },
     allowtButton: {
       enable: true,
-      allow: 'allow cookie'
+      allow: "Allow Cookie",
+      color: '#000',
+      bcolor: '#f36e15f5'
     },
     declineButton: {
       enable: true,
-      deny: 'refuse cookie'
+      deny: "Refuse Cookie",
+      color: '#000',
+      bcolor: '#fff'
     },
     learnMoreLink: {
       enable: true,
-      learnMore: 'learn more',
-      link: 'www.example.com'
+      learnMore: "learn more",
+      link: "www.example.com",
+      color: '#3D9BFF'
+    },
+    review: {
+      enable: true,
+      message: "Review My consentement",
+      color: "",
+      bcolor: "",
     }
   }
   beforeEach(async(() => {
@@ -56,13 +75,6 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h2').textContent).toContain('Installation');
-  });
-
-  it('should render reject cookie button', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('button').textContent).toContain('Reject the cookie');
   });
 
 });

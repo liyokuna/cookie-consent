@@ -11,111 +11,111 @@ export class ConfigService {
         return of(this.config);
     }
 
-    public getHeader(): Observable<String> {
+    public getHeader(): Observable<string> {
         return of(this.config.header.title);
     }
 
-    public getHeaderColor(): Observable<String> {
+    public getHeaderColor(): Observable<string> {
         return of(this.config.header.color);
     }
 
-    public getHeaderBackgroundColor(): Observable<String> {
+    public getHeaderBackgroundColor(): Observable<string> {
         return of(this.config.header.bcolor);
     }
 
-    public getDomain(): Observable<String> {
+    public getDomain(): Observable<string> {
         return of(this.config.header.domain);
     }
 
-    public getGA_id(): Observable<String> {
+    public getGA_id(): Observable<string> {
         return of(this.config.header.ga_id);
     }
-    
-    public getMessage(): Observable<String> {
+
+    public getMessage(): Observable<string> {
         return of(this.config.header.message);
     }
 
-    public getAcceptEnable(): Observable<Boolean> {
+    public getAcceptEnable(): Observable<boolean> {
         return of(this.config.acceptButton.enable);
     }
 
-    public getAcceptMessage(): Observable<String> {
+    public getAcceptMessage(): Observable<string> {
         return of(this.config.acceptButton.accept);
     }
 
-    public getAcceptColor(): Observable<String> {
+    public getAcceptColor(): Observable<string> {
         return of(this.config.acceptButton.color);
     }
 
-    public getAcceptBackgroundColor(): Observable<String> {
+    public getAcceptBackgroundColor(): Observable<string> {
         return of(this.config.acceptButton.bcolor);
     }
-    
-    public getDenyEnable(): Observable<Boolean> {
+
+    public getDenyEnable(): Observable<boolean> {
         return of(this.config.declineButton.enable);
     }
 
-    public getDenyMessage(): Observable<String> {
+    public getDenyMessage(): Observable<string> {
         return of(this.config.declineButton.deny);
     }
 
-    public getDenyColor(): Observable<String> {
+    public getDenyColor(): Observable<string> {
         return of(this.config.declineButton.color);
     }
 
-    public getDenyBackgroundColor(): Observable<String> {
+    public getDenyBackgroundColor(): Observable<string> {
         return of(this.config.declineButton.bcolor);
     }
 
-    public getAllowEnable(): Observable<Boolean> {
+    public getAllowEnable(): Observable<boolean> {
         return of(this.config.allowtButton.enable);
     }
 
-    public getAllowMessage(): Observable<String> {
+    public getAllowMessage(): Observable<string> {
         return of(this.config.allowtButton.allow);
     }
 
-    public getAllowColor(): Observable<String> {
+    public getAllowColor(): Observable<string> {
         return of(this.config.allowtButton.color);
     }
 
-    public getAllowBackgroundColor(): Observable<String> {
+    public getAllowBackgroundColor(): Observable<string> {
         return of(this.config.allowtButton.bcolor);
     }
 
-    public getLinkButton(): Observable<{ enable: Boolean; learnMore: String; link: String; }> {
+    public getLinkButton(): Observable<{ enable: boolean; learnMore: string; link: string; }> {
         return of(this.config.learnMoreLink);
     }
 
-    public getLinkMessage(): Observable<String> {
+    public getLinkMessage(): Observable<string> {
         return of(this.config.learnMoreLink.learnMore);
     }
 
-    public getLinkLink(): Observable<String> {
+    public getLinkLink(): Observable<string> {
         return of(this.config.learnMoreLink.link);
     }
 
-    public getLinkEnable(): Observable<Boolean> {
+    public getLinkEnable(): Observable<boolean> {
         return of(this.config.learnMoreLink.enable);
     }
 
-    public getLinkColor(): Observable<String> {
+    public getLinkColor(): Observable<string> {
         return of(this.config.learnMoreLink.color);
     }
 
-    public getReviewEnable(): Observable<Boolean> {
+    public getReviewEnable(): Observable<boolean> {
         return of(this.config.review.enable);
     }
 
-    public getReviewMessage(): Observable<String> {
+    public getReviewMessage(): Observable<string> {
         return of(this.config.review.message);
     }
 
-    public getReviewColor(): Observable<String> {
+    public getReviewColor(): Observable<string> {
         return of(this.config.review.color);
     }
 
-    public getReviewBackgroundColor(): Observable<String> {
+    public getReviewBackgroundColor(): Observable<string> {
         return of(this.config.review.bcolor);
     }
 }
