@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CookieServiceModule, CookieConfig } from 'cookie-service';
+import { CookieServiceModule, CookieConfig } from 'cookie-service-banner';
 
 const testLibConfig: CookieConfig = {
   header: {
@@ -54,7 +53,6 @@ const testLibConfig: CookieConfig = {
   ],
   imports: [
     BrowserModule,
-    NgbModule,
     CookieServiceModule,
     CookieServiceModule.forRoot(testLibConfig),
     AppRoutingModule
