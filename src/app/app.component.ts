@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Cookie Consent Banner';
-  value: boolean;
   constructor() {}
 
   onOpen($event) {

@@ -22,7 +22,7 @@ const testLibConfig: CookieConfig = {
     color: '#fff',
     bcolor: '#266433'
   },
-  allowtButton: {
+  allowButton: {
     enable: true,
     allow: "Allow Cookie",
     color: '#000',

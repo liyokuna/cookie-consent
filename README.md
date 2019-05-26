@@ -1,5 +1,6 @@
 # Cookie Service
-Cookie Service focus on accessibilty and on respecting the [GDPR](https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es).
+Cookie Service focuses on accessibility and on respecting the [GDPR](https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es).
+If you are using [Google Analytics](https://analytics.google.com/analytics/web/), this will suit to your project because this library focus on disable Google Ananlytics when the user decide to do so.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Demo
@@ -7,11 +8,12 @@ Here is a link to the [demo]()
 
 ## Dependencies
 
-[Angular](https://angular.io/) ( the latest version of Angualr 7+ )
+[Angular](https://angular.io/) ( the latest version of Angular 7+ )
+[Bootstrap](https://getbootstrap.com/) ( the latest version of Bootsrap 4+ )
 
 ## Installation
 
-Intall cookie-service dependency through npm.
+Install cookie-service dependency through npm.
 `npm install cookie-service`
 
 After installing, you need to import the main module:
@@ -23,24 +25,43 @@ The full configuration:
 import { CookieServiceModule, CookieConfig } from 'cookie-service';<br>
 
 const testLibConfig: CookieConfig = {
-  header: "Cookie Consent Banner",
-  message: "We use cookies to provide you the best experience",
+  header: {
+    title:"Cookie Consent Banner",
+    message: "This website uses cookie to provide your the best experience. ",
+    domain:"localhost",
+    ga_id: "UA-123456-1",
+    color: '#fff',
+    bcolor: '#000'
+  },
   acceptButton: {
     enable: false,
-    accept: 'Got it!'
+    accept: "Got it!",
+    color: '#fff',
+    bcolor: '#266433'
   },
-  allowtButton: {
+  allowButton: {
     enable: true,
-    allow: 'Allow cookie'
+    allow: "Allow Cookie",
+    color: '#000',
+    bcolor: '#f36e15f5'
   },
   declineButton: {
     enable: true,
-    deny: 'Refuse cookie'
+    deny: "Refuse Cookie",
+    color: '#000',
+    bcolor: '#fff'
   },
   learnMoreLink: {
     enable: true,
-    learnMore: 'learn more',
-    link: 'www.example.com'
+    learnMore: "learn more",
+    link: "www.example.com",
+    color: '#3D9BFF'
+  },
+  review: {
+    enable: true,
+    message: "Review My consentement",
+    color: "",
+    bcolor: "",
   }
 }
 
@@ -63,33 +84,19 @@ export class AppModule { }
 
 ## Usage
 
-Once the above mentionned step are done, you can use `import { CookieServiceService } from 'cookie-service';` in your component to access to the main function.
+Once the steps mentioned above are done, you can use import library selector in your app.component.html.
 
 `
-import { CookieServiceService } from 'cookie-service';
 ...
-export class AppComponent {
-  title = 'cookie-service';
-  constructor(private cookiemanager: CookieServiceService) {}
-  public rejectCookie() {
-    this.cookiemanager.rejectCookie('UA-12345678-1');
-    location.reload();
-  }
+<router-outlet></router-outlet>
+<lib-cookie-service (isOpened)="onOpen($event)" ></lib-cookie-service>
 `
 
-`reject` function is meant to delete all the cookies and relauch the web site to display the cookie consent banner.
-
-And in your template, just add 
-`<cookie-service [GA_ID] = "'UA-12345678-1'"></cookie-service>`
-notice that you need to provide your GA ID in order to help the library to disbable Google analtycs if the user refuse the use of cookie.
+`isOpened` is function meant to state the openning or the closing of the cookie banner.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 
@@ -105,7 +112,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To get more help on the Angular CLI use `ng help` or use the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 #License
 

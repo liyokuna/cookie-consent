@@ -13,7 +13,7 @@ export interface CookieConfig {
       color: string,
       bcolor: string
     };
-    allowtButton: {
+    allowButton: {
       enable: boolean,
       allow: string,
       color: string,

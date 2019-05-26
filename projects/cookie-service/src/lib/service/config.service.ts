@@ -68,19 +68,19 @@ export class ConfigService {
     }
 
     public getAllowEnable(): Observable<boolean> {
-        return of(this.config.allowtButton.enable);
+        return of(this.config.allowButton.enable);
     }
 
     public getAllowMessage(): Observable<string> {
-        return of(this.config.allowtButton.allow);
+        return of(this.config.allowButton.allow);
     }
 
     public getAllowColor(): Observable<string> {
-        return of(this.config.allowtButton.color);
+        return of(this.config.allowButton.color);
     }
 
     public getAllowBackgroundColor(): Observable<string> {
-        return of(this.config.allowtButton.bcolor);
+        return of(this.config.allowButton.bcolor);
     }
 
     public getLinkButton(): Observable<{ enable: boolean; learnMore: string; link: string; }> {
