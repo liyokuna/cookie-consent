@@ -43,8 +43,8 @@ const testLibConfig: CookieConfig = {
   review: {
     enable: true,
     message: "Review My consentement",
-    color: "#000",
-    bcolor: "#fff",
+    color: "",
+    bcolor: "",
   }
 }
 

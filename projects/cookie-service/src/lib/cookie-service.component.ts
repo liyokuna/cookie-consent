@@ -130,7 +130,7 @@ export class CookieServiceComponent implements OnInit {
     this.cookieconfig.getLinkColor().subscribe(val => this.LearnMoreColor = val);
 
     this.cookieconfig.getReviewColor().subscribe(val => this.ReviewColor =val);
-    this.cookieconfig.getAcceptBackgroundColor().subscribe(val => this.ReviewBcolor = val);
+    this.cookieconfig.getReviewBackgroundColor().subscribe(val => this.ReviewBcolor = val);
   }
 
   public cssClass(color: String, bcolor: String) {
