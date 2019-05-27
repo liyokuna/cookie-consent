@@ -4,7 +4,7 @@ If you are using [Google Analytics](https://analytics.google.com/analytics/web/)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Demo
-Here is a link to the [demo](cookie-consent.github.io)
+Here is a link to the [demo](https://cookie-conset-banner.netlify.com/).
 
 ## Dependencies
 

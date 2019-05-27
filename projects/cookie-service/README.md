@@ -5,6 +5,9 @@ This library was generated with [Angular CLI](https://github.com/angular/angular
 The purpose of this library is to offer a full accessible cookie consent banner.
 Each component of the banner displayed, are meant to be accessible on respecting the standard of accessibility.
 
+## Demo
+Here is a link to the [demo](https://cookie-conset-banner.netlify.com/).
+
 ## Dependencies
 
 * [Angular](https://angular.io/) ( the latest version of Angular 7+ )<br>
