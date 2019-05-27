@@ -7,8 +7,8 @@ Each component of the banner displayed, are meant to be accessible on respecting
 
 ## Dependencies
 
-[Angular](https://angular.io/) ( the latest version of Angular 7+ )
-[Bootstrap](https://getbootstrap.com/) ( the latest version of Bootsrap 4+ )
+* [Angular](https://angular.io/) ( the latest version of Angular 7+ )<br>
+* [Bootstrap](https://getbootstrap.com/) ( the latest version of Bootsrap 4+ )
 
 ## Installation
 
