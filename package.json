@@ -1,6 +1,19 @@
 {
   "name": "cookie-consent",
   "version": "0.0.0",
+  "homepage": "https://cookie-conset-banner.netlify.com/",
+  "license": "MIT",
+  "author": {
+    "name": "Lionel Mukuna Ciowela",
+    "url": "https://twitter.com/liyokuna"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liyokuna/cookie-consent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liyokuna/cookie-consent/issues"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
