@@ -23,62 +23,62 @@ The full configuration:
 `
 import { CookieServiceModule, CookieConfig } from 'cookie-service';<br>
 
-const testLibConfig: CookieConfig = {
-  header: {
-    title:"Cookie Consent Banner",
-    message: "This website uses cookie to provide your the best experience. ",
-    domain:"localhost",
-    ga_id: "UA-123456-1",
-    color: '#fff',
-    bcolor: '#000'
-  },
-  acceptButton: {
-    enable: false,
-    accept: "Got it!",
-    color: '#fff',
-    bcolor: '#266433'
-  },
-  allowButton: {
-    enable: true,
-    allow: "Allow Cookie",
-    color: '#000',
-    bcolor: '#f36e15f5'
-  },
-  declineButton: {
-    enable: true,
-    deny: "Refuse Cookie",
-    color: '#000',
-    bcolor: '#fff'
-  },
-  learnMoreLink: {
-    enable: true,
-    learnMore: "learn more",
-    link: "www.example.com",
-    color: '#3D9BFF'
-  },
-  review: {
-    enable: true,
-    message: "Review My consentement",
-    color: "",
-    bcolor: "",
-  }
-}
+const testLibConfig: CookieConfig = {<br>
+  header: {<br>
+    title:"Cookie Consent Banner",<br>
+    message: "This website uses cookie to provide your the best experience. ",<br>
+    domain:"localhost",<br>
+    ga_id: "UA-123456-1",<br>
+    color: '#fff',<br>
+    bcolor: '#000'<br>
+  },<br>
+  acceptButton: {<br>
+    enable: false,<br>
+    accept: "Got it!",<br>
+    color: '#fff',<br>
+    bcolor: '#266433'<br>
+  },<br>
+  allowButton: {<br>
+    enable: true,<br>
+    allow: "Allow Cookie",<br>
+    color: '#000',<br>
+    bcolor: '#f36e15f5'<br>
+  },<br>
+  declineButton: {<br>
+    enable: true,<br>
+    deny: "Refuse Cookie",<br>
+    color: '#000',<br>
+    bcolor: '#fff'<br>
+  },<br>
+  learnMoreLink: {<br>
+    enable: true,<br>
+    learnMore: "learn more",<br>
+    link: "www.example.com",<br>
+    color: '#3D9BFF'<br>
+  },<br>
+  review: {<br>
+    enable: true,<br>
+    message: "Review My consentement",<br>
+    color: "",<br>
+    bcolor: "",<br>
+  }<br>
+}<br>
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    CookieServiceModule,
-    CookieServiceModule.forRoot(testLibConfig),
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+@NgModule({<br>
+  declarations: [<br>
+    AppComponent<br>
+  ],<br>
+  imports: [<br>
+    BrowserModule,<br>
+    NgbModule,<br>
+    CookieServiceModule,<br>
+    CookieServiceModule.forRoot(testLibConfig),<br>
+    AppRoutingModule<br>
+  ],<br>
+  providers: [],<br>
+  bootstrap: [AppComponent]<br>
+})<br>
+export class AppModule { }<br>
 `
 
 ## Usage
@@ -86,8 +86,8 @@ export class AppModule { }
 Once the steps mentioned above are done, you can use import library selector in your app.component.html.
 
 `
-...
-<router-outlet></router-outlet>
+...<br>
+<router-outlet></router-outlet><br>
 <lib-cookie-service (isOpened)="onOpen($event)" ></lib-cookie-service>
 `
 
