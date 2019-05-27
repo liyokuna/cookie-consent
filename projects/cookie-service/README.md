@@ -13,15 +13,15 @@ Each component of the banner displayed, are meant to be accessible on respecting
 ## Installation
 
 Install cookie-service dependency through npm.
-`npm install cookie-service`
+`npm install cookie-service-banner`
 
 After installing, you need to import the main module:
-`import { CookieServiceModule } from 'cookie-service';`
+`import { CookieServiceModule } from 'cookie-service-banner';`
 
 The full configuration:
 
 `
-import { CookieServiceModule, CookieConfig } from 'cookie-service';<br>
+import { CookieServiceModule, CookieConfig } from 'cookie-service-banner';<br>
 
 const testLibConfig: CookieConfig = {<br>
   header: {<br>

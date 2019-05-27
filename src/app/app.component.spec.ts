@@ -1,4 +1,4 @@
-import { CookieServiceModule, CookieConfig } from 'cookie-service';
+import { CookieServiceModule, CookieConfig } from 'cookie-service-banner';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
@@ -20,7 +20,7 @@ describe('AppComponent', () => {
       color: '#fff',
       bcolor: '#266433'
     },
-    allowtButton: {
+    allowButton: {
       enable: true,
       allow: "Allow Cookie",
       color: '#000',
@@ -74,7 +74,14 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h2').textContent).toContain('Installation');
+    expect(compiled.querySelector('h2').textContent).toContain('Introduction');
+  });
+
+  it('should render cookie message', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('.alert-cookie').textContent).toContain('This website uses cookie to provide your the best experience. ');
   });
 
 });
