@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to cookie-consent!');
+    expect(page.getTitleText()).toEqual('Cookie Consent Banner');
   });
 
   afterEach(async () => {
