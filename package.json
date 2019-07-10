@@ -25,7 +25,7 @@
     "test-lib": "ng test cookie-service",
     "lint-lib": "ng lint cookie-service",
     "build-lib": "ng build cookie-service",
-    "publish-lib": "npm run build-lib && npm run copy-readme && cd dist/cookie-service && npm publish",
+    "publish-lib": "npm run build-lib && cd dist/cookie-service && npm publish",
     "e2e": "ng e2e"
   },
   "private": true,
