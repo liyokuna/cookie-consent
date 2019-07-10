@@ -22,3 +22,10 @@ after_success:
 script:
   - npm run test cookie-service -- --no-watch --no-progress --browsers=ChromeHeadless
   - npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
+
+deploy:
+  provider: npm
+  email: "owner_mail"
+  api_key: "NPM_AUTH_TOKEN"
+    on:
+    tags: true
