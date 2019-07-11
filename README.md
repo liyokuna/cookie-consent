@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/cookie-service-banner.svg)](https://badge.fury.io/js/cookie-service-banner)
 [![Build Status](https://travis-ci.org/liyokuna/cookie-consent.svg?branch=master)](https://travis-ci.org/liyokuna/cookie-consent)
+[![dependencies Status](https://david-dm.org/liyokuna/cookie-consent/status.svg)](https://david-dm.org/liyokuna/cookie-consent)
 
 Cookie Service focuses on accessibility and on respecting the [GDPR](https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es).
 If you are using [Google Analytics](https://analytics.google.com/analytics/web/), this will suit to your project because this library focus on disable Google Ananlytics when the user decide to do so.
