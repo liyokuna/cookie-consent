@@ -33,5 +33,3 @@ jobs:
         on:
         tags: true
         all_branches: true
-    - stage: Deploy demo
-
