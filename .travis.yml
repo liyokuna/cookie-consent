@@ -18,7 +18,8 @@ install:
 jobs:
   include:
     - stage: Test Library
-      script: - npm run test cookie-service -- --no-watch --no-progress --browsers=ChromeHeadless
+      script:
+        - npm run test cookie-service -- --no-watch --no-progress --browsers=ChromeHeadless
     - stage: Npm Release
       node_js: "10.9.0"
       script:
