@@ -3,7 +3,7 @@ sudo: false
 
 language: node_js
 node_js:
-  - "10.4.1"
+  - "10.9.0"
 
 addons:
   chrome: stable
@@ -14,21 +14,24 @@ cache:
 
 install:
   - npm install
-  - npm install codecov -g
 
-after_success:
-  - codecov
+jobs:
+  include:
+    - stage: Test Library
+      script: - npm run test cookie-service -- --no-watch --no-progress --browsers=ChromeHeadless
+    - stage: Npm Release
+      node_js: "10.9.0"
+      script:
+        - echo "Deployig to NPM..."
+        - npm run build-lib
+        - npm run copy-readme
+      deploy:
+        provider: npm
+        email: "owner_mail"
+        api_key: "NPM_AUTH_TOKEN"
+        local_dir: dist/cookie-service
+        on:
+        tags: true
+        all_branches: true
+    - stage: Deploy demo
 
-script:
-  - npm run test cookie-service -- --no-watch --no-progress --browsers=ChromeHeadless
-  - npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
-  - npm run build-lib
-
-deploy:
-  provider: npm
-  email: "owner_mail"
-  api_key: "NPM_AUTH_TOKEN"
-  local_dir: dist/cookie-service
-  on:
-  tags: true
-  all_branches: true
