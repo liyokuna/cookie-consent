@@ -1,19 +1,21 @@
-<div class="alert-cookie bottom" *ngIf="showAlertCookie" attr.aria-label="{{ header }}" attr.title= "{{ header }}" [ngStyle]="cssClass(HeaderColor, HeaderBackgroundColor )">
-    <div class="row">
-        <div class="col-sm-10">
-            <p>
-                <b>{{ message }}</b>
-                <a *ngIf="LearnMoreEnable " href="{{ LearnMoreLink }}" attr.aria-label="{{ LearnMoreMessage }}" attr.title= "{{ LearnMoreMessage }}" >{{ LearnMoreMessage }}</a>
-            </p>
-        </div>
-        <div class="col-sm-2">
-            <button *ngIf="DenyEnable " type="button" class="cbtn" (click)="this.deny()" attr.aria-label="{{ DenyMessage }}" attr.title= "{{ DenyMessage }}" [ngStyle]="cssClass(AcceptColor, 'transparent' )">{{ DenyMessage }}</button>
-            <button *ngIf="AllowEnable " type="button" class="cbtn" (click)="this.allow()" attr.aria-label="{{ AllowMessage }}" attr.title= "{{ AllowMessage }}" [ngStyle]="cssClass(AllowColor, AllowBackgroundColor)">{{ AllowMessage }}</button>
-            <button *ngIf="AcceptEnable " type="button" class="cbtn" (click)="this.allow()" attr.aria-label="{{ AcceptMessage }}" attr.title= "{{ AcceptMessage }}" [ngStyle]="cssClass(AcceptColor, AcceptBackgroundColor)">{{ AcceptMessage }}</button>
+<section id="cookie-alert">
+    <div class="alert-cookie bottom" *ngIf="showAlertCookie" attr.aria-label="{{ header }}" attr.title= "{{ header }}" [ngStyle]="cssClass(HeaderColor, HeaderBackgroundColor )">
+        <div class="row">
+            <div class="col-sm-10">
+                <p>
+                    <b>{{ message }}</b>
+                    <a *ngIf="LearnMoreEnable " href="{{ LearnMoreLink }}" attr.aria-label="{{ LearnMoreMessage }}" attr.title= "{{ LearnMoreMessage }}" >{{ LearnMoreMessage }}</a>
+                </p>
+            </div>
+            <div class="col-sm-2">
+                <button *ngIf="DenyEnable " type="button" class="cbtn" (click)="this.deny()" attr.aria-label="{{ DenyMessage }}" attr.title= "{{ DenyMessage }}" [ngStyle]="cssClass(AcceptColor, 'transparent' )">{{ DenyMessage }}</button>
+                <button *ngIf="AllowEnable " type="button" class="cbtn" (click)="this.allow()" attr.aria-label="{{ AllowMessage }}" attr.title= "{{ AllowMessage }}" [ngStyle]="cssClass(AllowColor, AllowBackgroundColor)">{{ AllowMessage }}</button>
+                <button *ngIf="AcceptEnable " type="button" class="cbtn" (click)="this.allow()" attr.aria-label="{{ AcceptMessage }}" attr.title= "{{ AcceptMessage }}" [ngStyle]="cssClass(AcceptColor, AcceptBackgroundColor)">{{ AcceptMessage }}</button>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="bottom" *ngIf="!showAlertCookie && ReviewEnable">
-    <button class="btn btn-dark btn-sm" (click)="this.review()" href="#" [ngStyle]="cssClass(ReviewColor, ReviewBcolor )"  attr.aria-label="{{ Review }}" attr.title= "{{ Review }}" >{{Review}}</button>
-</div>
+    <div class="bottom" *ngIf="!showAlertCookie && ReviewEnable">
+        <button class="btn btn-dark btn-sm" (click)="this.review()" href="#" [ngStyle]="cssClass(ReviewColor, ReviewBcolor )"  attr.aria-label="{{ Review }}" attr.title= "{{ Review }}" >{{Review}}</button>
+    </div>
+</section>

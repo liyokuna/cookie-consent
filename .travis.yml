@@ -32,8 +32,8 @@ jobs:
         api_key: "NPM_AUTH_TOKEN"
         local_dir: dist/cookie-service
         on:
-        tags: true
-        all_branches: true
+          tags: true
+          all_branches: true
     - stage: Deploy docs
       node_js: "10.9.0"
       script:
