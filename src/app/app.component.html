@@ -1,0 +1,116 @@
+<div>
+  <nav class="navbar navbar-light" style="background-color: #e6e3e3ee;">
+      <a href="#" class="navbar-brand" attr.aria-label="{{ title }}">{{ title }}</a>
+      <form class="form-inline">
+        <a class="nav-link mr-sm-2 underlining" aria-label="Link to Cookie Service Banner Repository" href="https://github.com/liyokuna/cookie-consent">Github</a>
+      </form>
+    </nav>
+</div>
+<div class="container">
+  <h2>Introduction</h2>
+  <div class="row">
+    <p>
+        Cookie Consent Banner focuses on accessibility and on respecting the <a href="https://fr.wikipedia.org/wiki/R%C3%A8glement_g%C3%A9n%C3%A9ral_sur_la_protection_des_donn%C3%A9es">GDP</a>.
+        If you are using <a href="https://analytics.google.com/analytics/web/">Google Analytics</a>, this will suit to your project because this library focus on disable Google Ananlytics when the user decide to do so.
+    </p>
+  </div>
+</div>
+<div class="container">
+    <h2>Dependecies</h2>
+    <div class="row">
+      <ul>
+        <li><a href="https://angular.io/" aria-label="link to Angular Website">Angular</a>, the latest version of Angular 7+</li>
+        <li><a href="https://getbootstrap.com/" aria-label="link to Bootsrap Website">Bootstrap</a>, the latest version of Bootsrap 4+ </li>
+      </ul>
+    </div>
+  </div>
+
+<div class="container">
+  
+    <h2>Installation</h2>
+    <div class="row">
+      <p>
+        Intall cookie-service dependency through npm.
+        <code>npm install cookie-service</code>
+      </p>
+      <p>After installing, you need to import the main module:
+        <code>import {{ '{' }} CookieServiceModule {{ '}' }} from 'cookie-service';</code>
+      </p>
+      <p>The full configuration:</p>
+        <code>
+          import {{ '{' }} CookieServiceModule, CookieConfig {{ '}' }} from 'cookie-service';<br>
+
+          const testLibConfig: CookieConfig = {{ '{' }}<br>
+          header: {{ '{' }}<br>
+            title:"Cookie Consent Banner",<br>
+            message: "This website uses cookie to provide your the best experience. ",<br>
+            domain:"localhost",<br>
+            ga_id: "UA-123456-1",<br>
+            color: '#fff',<br>
+            bcolor: '#000'<br>
+            {{ '}' }},<br>
+          acceptButton: {{ '{' }}<br>
+            enable: false,<br>
+            accept: "Got it!",<br>
+            color: '#fff',<br>
+            bcolor: '#266433'<br>
+            {{ '}' }},<br>
+          allowtButton: {{ '{' }}<br>
+            enable: true,<br>
+            allow: "Allow Cookie",<br>
+            color: '#000',<br>
+            bcolor: '#f36e15f5'<br>
+            {{ '}' }},<br>
+          declineButton: {{ '{' }}<br>
+            enable: true,<br>
+            deny: "Refuse Cookie",<br>
+            color: '#000',<br>
+            bcolor: '#fff'<br>
+            {{ '}' }},<br>
+          learnMoreLink: {{ '{' }}<br>
+            enable: true,<br>
+            learnMore: "learn more",<br>
+            link: "www.example.com",<br>
+            color: '#3D9BFF'<br>
+            {{ '}' }},<br>
+          review: {{ '{' }}<br>
+            enable: true,<br>
+            message: "Review My consentement",<br>
+            color: "",<br>
+            bcolor: "",<br>
+            {{ '}' }}<br>
+          {{ '}' }}<br>
+
+          @NgModule({{ '{' }}<br>
+            declarations: [<br>
+              AppComponent<br>
+            ],<br>
+            imports: [<br>
+              BrowserModule,<br>
+              NgbModule,<br>
+              CookieServiceModule,<br>
+              CookieServiceModule.forRoot(testLibConfig),<br>
+              AppRoutingModule<br>
+            ],<br>
+            providers: [],<br>
+            bootstrap: [AppComponent]<br>
+          {{ '}' }})<br>
+          export class AppModule {{ '{' }} {{ '}' }}<br>
+        </code>
+      </div>
+    <h2>Usage</h2>
+    <div class="row">
+      <p>
+        Once the above mentionned step are done, you can use import library selector, `lib-cookie-service` in your app.component.html.<br>
+        <code>
+          ...<br>
+          < lib-cookie-service (isOpened)="onOpen($event)" >< /lib-cookie-service>
+        </code>
+        <br>
+        <code>isOpened</code> is function meant to state the openning or the closing of the cookie banner.<br>
+        <b>Notice</b> that you need to provide your GA ID in order to help the library to disbable Google analtycs if the user refuse the use of cookie.
+      </p>
+    </div>
+  </div>
+<router-outlet></router-outlet>
+<lib-cookie-service (isOpened)="onOpen($event)" ></lib-cookie-service>

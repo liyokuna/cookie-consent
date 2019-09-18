@@ -1,0 +1,81 @@
+{
+  "name": "cookie-consent",
+  "version": "1.0.0",
+  "homepage": "https://cookie-conset-banner.netlify.com/",
+  "license": "MIT",
+  "author": {
+    "name": "Lionel Mukuna Ciowela",
+    "url": "https://twitter.com/liyokuna"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liyokuna/cookie-consent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liyokuna/cookie-consent/issues"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "build-start": "ng build cookie-service && npm run start",
+    "copy-readme": "cpx ./README.md dist/cookie-service",
+    "test-lib": "ng test cookie-service",
+    "lint-lib": "ng lint cookie-service",
+    "build-lib": "ng build cookie-service",
+    "build-docs": "ng build --prod",
+    "publish-lib": "npm run build-lib && cd dist/cookie-service && npm publish",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "cookie-service-banner": "^1.0.5"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular-devkit/build-ng-packagr": "~0.13.0",
+    "@angular/animations": "~8.2.2",
+    "@angular/cli": "~7.3.8",
+    "@angular/common": "~8.2.2",
+    "@angular/compiler": "~8.2.2",
+    "@angular/compiler-cli": "~8.2.2",
+    "@angular/core": "~8.2.2",
+    "@angular/forms": "~8.2.2",
+    "@angular/language-service": "~8.1.0",
+    "@angular/platform-browser": "~8.2.2",
+    "@angular/platform-browser-dynamic": "~8.2.2",
+    "@angular/router": "~8.2.2",
+    "@types/jasmine": "~3.3.13",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "bootstrap": "^4.3.1",
+    "codelyzer": "~5.0.0",
+    "core-js": "^2.5.4",
+    "cpx": "~1.5.0",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.1.0",
+    "karma-chrome-launcher": "~3.0.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "ng-packagr": "^4.2.0",
+    "protractor": "~5.4.0",
+    "rxjs": "~6.5.2",
+    "ts-node": "~7.0.0",
+    "tsickle": ">=0.29.0",
+    "tslib": "^1.9.0",
+    "tslint": "~5.18.0",
+    "typescript": "~3.4.1",
+    "zone.js": "~0.8.26"
+  },
+  "keywords": [
+    "angular",
+    "cookie",
+    "bootstrap",
+    "typescript"
+  ]
+}
