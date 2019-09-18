@@ -26,11 +26,11 @@ jobs:
         - echo "Deployig to NPM..."
         - npm run build-lib
         - npm run copy-readme
+        - cd dist/cookie-service
       deploy:
         provider: npm
         email: "owner_mail"
         api_key: "NPM_AUTH_TOKEN"
-        local_dir: dist/cookie-service
         on:
           tags: true
           all_branches: true
