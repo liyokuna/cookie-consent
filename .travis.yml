@@ -30,7 +30,7 @@ jobs:
         provider: npm
         email: "owner_mail"
         api_key: "NPM_AUTH_TOKEN"
-        local_dir: dist/cookie-service
+        deployment: dist/cookie-service
         on:
           tags: true
           all_branches: true
