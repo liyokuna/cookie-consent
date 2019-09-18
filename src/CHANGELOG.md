@@ -1,4 +1,11 @@
 <a name="1.0.5"></a> (08/07/2019)
+## 2.0.0
+
+### Changes:
+*	**Travis CI:** Adding auto deployement to npm and github pages [fea856e](https://github.com/liyokuna/cookie-consent/commit/fea856efcdfe24c3d11990c3d2dd1af768b2d660)
+*	**Package JSON :** Updating angular to 8 [ebf317](https://github.com/liyokuna/cookie-consent/commit/ebf3175224d3951ab2e91b17d8124190ccdb8fae)
+
+<a name="1.0.5"></a> (08/07/2019)
 ## 1.0.5
 
 ### Changes:
