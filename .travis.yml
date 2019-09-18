@@ -44,7 +44,7 @@ jobs:
         skip_cleanup: true
         github_token: $GITHUB_TOKEN
         keep_history: true
-        local_dir: dist/cookie-consent
+        deployment: dist/cookie-consent
         fqdn: cookie-consent.com
         on:
           tags: true
