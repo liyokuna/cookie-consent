@@ -15,11 +15,11 @@
     "url": "https://github.com/liyokuna/cookie-consent/issues"
   },
   "keywords": [
-    "angular","cookie", "bootstrap","typescript"
+    "angular","cookie", "bootstrap","typescript","rgpd", "grpd"
   ],
   "peerDependencies": {
-    "@angular/common": "^8.2.2",
-    "@angular/core": "^8.2.2",
+    "@angular/common": "^8.0.0",
+    "@angular/core": "^8.0.0",
     "boosted": "^4.3.1"
   }
 }
