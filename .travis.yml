@@ -32,7 +32,8 @@ jobs:
         provider: npm
         skip_cleanup: true
         email: "owner_mail"
-        api_key: "NPM_AUTH_TOKEN"
+        api_key:
+          secure: "NPM_AUTH_TOKEN"
         local_dir: dist/cookie-service
         on:
           tags: true
