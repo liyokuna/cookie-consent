@@ -9,7 +9,7 @@ import { CookieServiceModule, CookieConfig } from 'cookie-service-banner';
 const testLibConfig: CookieConfig = {
   header: {
     title:"Cookie Consent Banner",
-    message: "This website uses cookie to provide your the best experience. ",
+    message: "This website uses cookies to provide you the best experience. ",
     domain:"localhost",
     ga_id: "UA-123456-1",
     color: '#fff',
