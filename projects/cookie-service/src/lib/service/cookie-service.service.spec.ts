@@ -47,11 +47,11 @@ describe('CookieServiceService', () => {
     service.deleteCookie('test');
   });
 
-  it('#getCookie should return a undefined value', () => {
+  it('#getCookie should return a undefined value after deleting stringtest cookie', () => {
     expect(service.getCookie('stringTest')).toBeUndefined();
   });
 
-  it('#getCookie should return a undefined value', () => {
+  it('#getCookie should return a undefined value after deleting test cookie', () => {
     expect(service.getCookie('test')).toBeUndefined();
   });
 });
