@@ -15,19 +15,15 @@ describe('CookieServiceService', () => {
   let service: CookieServiceService;
   beforeEach(() => { service = new CookieServiceService(); });
 
-  it('#setCookie should set a boolean value', () => {
-    service.setCookie('test', true, 'localhost');
-  });
-
-  it('#setCookieWithString should set a string value', () => {
-    service.setCookieWithString('stringTest', 'test', 'localhost');
-  });
-
   it('#getCookie should return a boolean value', () => {
+    service.setCookie('test', true, 'localhost');
+
     expect(service.getCookie('test')).toBeTruthy();
   });
 
   it('#getCookie should return a string value', () => {
+    service.setCookieWithString('stringTest', 'test', 'localhost');
+
     expect(service.getCookie('stringTest')).toBe('test');
   });
 
@@ -39,15 +35,15 @@ describe('CookieServiceService', () => {
     expect(service.isAnalytics('UA-0000-23')).toBeTruthy();
   });
 
-  it('#deleteCookie should delete cookie stringTest', () => {
+  it('#getCookie should return a undefined value after deleting stringtest cookie', () => {
     service.deleteCookie('stringTest');
-  });
 
-  it('#deleteCookie should delete cookie test', () => {
-    service.deleteCookie('test');
+    expect(service.getCookie('stringTest')).toBeUndefined();
   });
 
   it('#getCookie should return a undefined value after deleting test cookie', () => {
+    service.deleteCookie('test');
+
     expect(service.getCookie('test')).toBeUndefined();
   });
 });
