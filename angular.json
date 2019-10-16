@@ -152,6 +152,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "projects/cookie-service/src/test.ts",
+            "codeCoverage": true,
             "tsConfig": "projects/cookie-service/tsconfig.spec.json",
             "karmaConfig": "projects/cookie-service/karma.conf.js"
           }
