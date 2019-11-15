@@ -1,4 +1,10 @@
-<a name="1.0.5"></a> (08/07/2019)
+<a name="2.0.1"></a> (15/11/2019)
+## 2.0.1
+
+### Correction:
+*	**Cookie-service:** Removing domain from the saving cookie schema [35ce3c7](https://github.com/liyokuna/cookie-consent/commit/35ce3c7b32e2a321f68851ba45762423f01541c1)
+
+<a name="1.0.5"></a> (08/08/2019)
 ## 2.0.0
 
 ### Changes:
