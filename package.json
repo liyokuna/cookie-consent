@@ -32,7 +32,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "cookie-service-banner": "^2.0.0"
+    "cookie-service-banner": "^2.0.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.9",
