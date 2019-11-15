@@ -13,7 +13,7 @@ export class CookieServiceService {
       const value = val;
       // Set it expire in 395 days, compliance with Cookie Laws in EU
       date.setTime(date.getTime() + (395 * 24 * 60 * 60 * 1000));
-      document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/' + '; domain=' + domain;
+      document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/' ;
   }
 
   public setCookieWithString(name: string, val: string, domain: string) {
@@ -21,7 +21,7 @@ export class CookieServiceService {
       const value = val;
       // Set it expire in 395 days, compliance with Cookie Laws in EU
       date.setTime(date.getTime() + (395 * 24 * 60 * 60 * 1000));
-      document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/' + '; domain=' + domain;
+      document.cookie = name + ' = ' + value + '; expires=' + date.toUTCString() + '; path=/' ;
   }
 
   public getCookie(name: string) {
