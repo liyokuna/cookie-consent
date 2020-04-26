@@ -1,8 +1,9 @@
-import { Inject } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { CookieConfigService } from '../service/cookie-config.service';
 import { CookieConfig } from '../interface/cookie-config.interface';
 import { Observable, of } from 'rxjs';
 
+@Injectable()
 export class ConfigService {
 
     constructor(@Inject(CookieConfigService) private config: CookieConfig) { }
