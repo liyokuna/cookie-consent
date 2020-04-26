@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 
 export class CookieServiceModule {
-  static forRoot(config: CookieConfig): ModuleWithProviders {
+  static forRoot(config: CookieConfig): ModuleWithProviders<CookieServiceModule> {
     return {
       ngModule: CookieServiceModule,
       providers: [
