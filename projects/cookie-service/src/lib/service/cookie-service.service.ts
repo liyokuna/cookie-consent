@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class CookieServiceService {
 
   constructor() { }
-  private GA_COOKIE_NAMES = ['__utma', '__utmb', '__utmc', '__utmz', '_ga', '_gat'];
+  private GA_COOKIE_NAMES = ['__utma', '__utmb', '__utmc', '__utmz', '_ga', '_gid', '_gat', '_gat_gtag'];
 
   public setCookie(name: string, val: boolean, domain: string) {
       const date = new Date();
@@ -43,6 +43,7 @@ export class CookieServiceService {
       this.deleteCookie(`ga-disable-${gaId}`);
       this.deleteCookie('consent');
       window[`ga-disable-${gaId}`] = true;
+      window[`_gat_gtag_${gaId}`] = false;
       this.GA_COOKIE_NAMES.forEach((cookieName) => {
         this.deleteCookie(cookieName);
       });

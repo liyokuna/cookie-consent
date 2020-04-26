@@ -66,7 +66,7 @@ export class CookieServiceComponent implements OnInit {
       this.isOpened.emit(this.showAlertCookie);
     }
 
-    if (this.cookiemanager.getCookie('consent') && this.showAlertCookie) {
+    if (this.cookiemanager.getCookie('consent') && !this.showAlertCookie) {
         const TrackNavigator = navigator.doNotTrack;
         if ( (TrackNavigator === '1' || TrackNavigator === 'yes' ) ) {
           this.cookiemanager.rejectCookie(this.GA_ID);
