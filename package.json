@@ -24,7 +24,7 @@
     "copy-readme": "cpx ./README.md dist/cookie-service",
     "test-lib": "ng test cookie-service",
     "lint-lib": "ng lint cookie-service",
-    "build-lib": "ng build cookie-service",
+    "build-lib": "ng build cookie-service --prod",
     "build-docs": "ng build --prod",
     "publish-lib": "npm run build-lib && cd dist/cookie-service && npm publish",
     "e2e": "ng e2e"
