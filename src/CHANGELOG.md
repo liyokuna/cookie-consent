@@ -1,3 +1,13 @@
+<a name="2.2.0"></a> (26/04/2020)
+## 2.2.0
+
+### Changes:
+*	**Travis CI:** Updating version o f node js engine to run test and deploy [302b7e](https://github.com/liyokuna/cookie-consent/commit/302b7e116c96b0e130e66557befd9922b2a2412e)
+*	**Package JSON :** Updating angular to 9 [7d7798](https://github.com/liyokuna/cookie-consent/commit/7d77985faca17a0d18231a767fecc54988f5d568)
+*	**Cookie Service Banner :** correcting a condition to reject cookie for google manager tracking [9ad42e](https://github.com/liyokuna/cookie-consent/commit/9ad42e009bbf9bb3b5f2976d1563fecd779398ce)
+*	**Example project :** Adding google tag manager [9eb257](https://github.com/liyokuna/cookie-consent/commit/9eb2574239bf36f583e45f877591cbbff0551307)
+*	**Example project :** Correcting the name of the cookie into the file example [1e7776](https://github.com/liyokuna/cookie-consent/commit/1e776dab3e352ed4d788cfb2d40ebe67dfc69cd6)
+
 <a name="2.0.1"></a> (15/11/2019)
 ## 2.0.1
 
