@@ -1,6 +1,6 @@
 {
   "name": "cookie-service-banner",
-  "version": "2.0.1",
+  "version": "2.2.0",
   "homepage": "https://cookie-conset-banner.netlify.com/",
   "license": "MIT",
   "author": {
@@ -18,8 +18,8 @@
     "angular","cookie", "bootstrap","typescript","rgpd", "grpd"
   ],
   "peerDependencies": {
-    "@angular/common": "^8.0.0",
-    "@angular/core": "^8.0.0",
-    "boosted": "^4.3.1"
+    "@angular/common": "^9.0.0",
+    "@angular/core": "^9.0.0",
+    "boosted": "^4.4.1"
   }
 }
