@@ -11,7 +11,7 @@ const testLibConfig: CookieConfig = {
     title:"Cookie Consent Banner",
     message: "This website uses cookies to provide you the best experience. ",
     domain:"localhost",
-    ga_id: "UA-123456-1",
+    ga_id: "UA-80915848-2",
     color: '#fff',
     bcolor: '#000'
   },
