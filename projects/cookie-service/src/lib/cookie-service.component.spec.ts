@@ -9,7 +9,7 @@ import { CookieConfigService } from './service/cookie-config.service';
 import { ConfigService } from './service/config.service';
 import { CookieConfig } from './interface/cookie-config.interface'
 
-let testlib: CookieConfig = {
+const testlib: CookieConfig = {
   header: {
     title:'Cookie Consent Banner',
     message: 'This website uses cookie to provide your the best experience. ',
