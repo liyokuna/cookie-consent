@@ -27,8 +27,7 @@ jobs:
       provider: npm
       skip_cleanup: true
       email: owner_mail
-      api_key:
-        secure: LNXXhZYni9dWmNOEaf/O5/tTGOpRw/5QQiJkKxSkc+sgWDxw8bZf9hRG//b/v6dK9mgwr8mIqMFDkzTOGEsVb5A9dQRPBkDDmAAKg4sIrmmSgkG0U5pzYhCFbC6j4YcsJ1xAKl7MDfKC4/OF6Kpm0YSK3mcLinZKz8s7jNeFRpAcBFQpuk3kUKaEv21QnauXy6VhOs8a/eAfUz2HZBhtRnxVDuIcKsyU6k8N42MS85APb7zG7FUcuUfeFalyyySeptf0s2F9Bn8y4MUqI3kUwI6PPRz0fBdClxx/Y9WblT2sspMapcB6ocE/5kfacMHW5i6CF6G/a+509K2rqVbZXDGr+wNX+3x/ujYaHdBcV4DWaKHZPl+lO3ZOt6KhZeOeYBvHyZFscOthu+WF7cCPlBQpc2fpbjuqU3hsDk1buUgHO/lUPVcwFOcj3KX8lnHWYCCqV8z9MP0N2wcBrwSsFgKw5pW2EDpFfvSNg/I/ifb4EEv354eZeMWqCX1XQ0/HLXres0HEfirqd75oDHeEzfOTf8Q+le+Th9CzZpI6Erzswu+i7fzPmfdWeqabYUdiePjwbqZr3wK9r3Sy5bg/dcaZGTTizXISgxVri4iCP7N38gXClvFuTHjmZWpazAi/6QZBHpIEjFeZVogHL9TBVtMj6tuOTy8D/Gtp0k4fiAU=
+      api_key: $NPM_AUTH_TOKEN
       local_dir: dist/cookie-service
       on:
         tags: true
