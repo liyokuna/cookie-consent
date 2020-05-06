@@ -32,7 +32,7 @@
   "private": true,
   "dependencies": {
     "cookie-service-banner": "^2.0.1",
-    "tslib": "^1.11.1"
+    "tslib": "^1.11.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.3",
